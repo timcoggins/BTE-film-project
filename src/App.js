@@ -1,5 +1,6 @@
-import HomePage from './components/HomePage';
 import NavBar from './components/NavBar';
+import HomePage from './components/HomePage';
+import InfoPage from './components/InfoPage';
 
 import './App.css';
 
@@ -7,9 +8,9 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <h1>Find a movie</h1>
+        {/* TODO The router will change between these pages in the future*/}
         <HomePage/>
-        
+        <InfoPage/>
     </div>
   );
 }
