@@ -1,11 +1,15 @@
+import HomePage from './components/HomePage';
+import NavBar from './components/NavBar';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+        <NavBar />
         <h1>Find a movie</h1>
-      </header>
+        <HomePage/>
+        
     </div>
   );
 }
