@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import InfoPage from './components/InfoPage';
@@ -6,12 +8,19 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-        <NavBar />
-        {/* TODO The router will change between these pages in the future*/}
-        <HomePage/>
-        <InfoPage/>
-    </div>
+    <Router>
+        <div className="App">
+            <NavBar />
+            <Switch>
+                <Route exact path="/">
+                    <HomePage/>
+                </Route>
+                <Route path="/film/:id">
+                    <InfoPage/>
+                </Route>
+            </Switch>
+        </div>
+    </Router>
   );
 }
 

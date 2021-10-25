@@ -3,14 +3,15 @@
  * Home page where the search and popular movies/tv are
  * 
  */
-
-import axios from 'axios'
+import { uid } from 'uid';
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
+import styled from 'styled-components'
+
 import HomePageImage from "./HomePageImage"
 import Search from "./Search"
 import Carousel from "./Carousel"
-
-import styled from 'styled-components'
 
 // Styles
 
@@ -66,18 +67,17 @@ const HomePage = () => {
                 {/* The search component for finding a movie */}
                 <Search searchHandler={searchHandler} />
 
+                {/* TODO Make this into a separate component */}
                 {/* Display each result on a card once we have the results data, if there is no data show the carousel */}
                 {searchData.length !== 0
                     ? searchData.map(item =>
-                        <SearchCard>
-                            <h3>{item.title}</h3>
+                        <SearchCard key={uid()}>
+                            <h3><Link to={`/film/${item.id}`}>{item.title}</Link></h3>
                             <p>{item.release_date}</p>
-                            <p>More Info id: {item.id}</p>
-                            <img src={`http://image.tmdb.org/t/p/w500${item.poster_path}`}/>
+                            <img src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title}/>
                         </SearchCard>)
                     : <Carousel/>
                 }
-
             </HomeContainer>
     )
 }
