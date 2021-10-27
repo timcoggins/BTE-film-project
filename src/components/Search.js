@@ -18,8 +18,10 @@ gap: 20px;
 `
 
 const SearchFor =styled.input`
-    width: 280px;
-    height: 35px;
+    // width: 280px;
+    // height: 35px;
+    padding: 10px 40px;
+    font-size: 15px;
     border: 1px solid black;
     border-radius: 10px;
     text-align: center;
@@ -28,16 +30,17 @@ const SearchFor =styled.input`
       }
     ::-webkit-input-placeholder {
         font-size: 15px;
+    
 `
 
 const Button = styled.button`
-    padding: 10px 30px;
+    padding: 8px 25px;
     border: 1px solid black;
     border-radius: 10px;
     :hover {
         background: #98BAE7; 
         color: black;
-        padding: 12px 32px;
+        padding: 10px 27px;
     }
     font-size: 15px;
 
