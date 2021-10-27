@@ -4,6 +4,7 @@
  * 
  */
 
+import { useState } from 'react'
 import styled from 'styled-components'
 
 // Styles
@@ -28,14 +29,17 @@ const Button = styled.button`
  
 // Component
 
-const Search = () => {
+const Search = (props) => {
+
+    const [searchInput, setSearchInput] = useState('')
+
     return(
         <Container>
             <form>
-                <SearchFor type="text" placeholder='Search for a Movie/TV Show'/>
+                <SearchFor type="text" placeholder='Search for a Movie/TV Show' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
                 
             </form>
-            <Button>Search</Button>
+            <Button onClick={() => props.searchHandler(searchInput)}>Search</Button>
         </Container>
     )
 }

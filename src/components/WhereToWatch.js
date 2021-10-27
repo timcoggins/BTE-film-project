@@ -8,8 +8,6 @@ import WhereToWatchCountry from "./WhereToWatchCountry"
 import WhereToWatchIcon from "./WhereToWatchIcon"
 import WhereToWatchMethod from "./WhereToWatchMethod"
 
-import styled from 'styled-components'
-
 // Component
 
 function WhereToWatch() {

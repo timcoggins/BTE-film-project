@@ -3,6 +3,7 @@
  * Navbar for all pages
  * 
  */
+import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
@@ -16,6 +17,7 @@ const Container = styled.div`
 const Title = styled.h2`
     margin: 0;
     padding: 5px;
+    color: black;
 `
 
 const Logo = styled.img`
@@ -29,7 +31,7 @@ const NavBar = () => {
     return (
         <Container>
             <Logo src='./clapper-board.png'/>
-            <Title>Movie App</Title>
+            <Link to="/"><Title>Movie App</Title></Link>
         </Container>
     )
 }
