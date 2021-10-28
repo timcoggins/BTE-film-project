@@ -30,13 +30,12 @@ const Button= styled.button`
 
 // Components
 
-const WhereToWatchMethod = () => {
+const WhereToWatchMethod = (props) => {
     return (
         <Container>
-            <Button>Stream</Button>
-            <Button>Buy</Button>
-            <Button>Rent</Button>
-            <Button>Free</Button>
+            <Button onClick={() => props.setWatchMethod('flatrate')}>Stream</Button>
+            <Button onClick={() => props.setWatchMethod('buy')}>Buy</Button>
+            <Button onClick={() => props.setWatchMethod('rent')}>Rent</Button>
         </Container>
     )
 }
