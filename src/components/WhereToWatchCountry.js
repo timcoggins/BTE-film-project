@@ -5,6 +5,8 @@
  */
 
 import styled from 'styled-components'
+import {useState, useEffect } from 'react'
+import axios from 'axios';
 
 
 
@@ -27,10 +29,13 @@ text-align: left;
 // Component
 
 const WhereToWatchCountry = () => {
+    
+
     return (
         <Container>
             <Title>Where to watch</Title>
         <DisplayOptions> 
+          <option>Belgium</option>  
           <option>Spain</option>
           <option>France</option>
            <option>Germany</option>
@@ -43,9 +48,3 @@ const WhereToWatchCountry = () => {
 
 
 export default WhereToWatchCountry
-{/* <DisplayOptions >
-                <option >Spain</option>
-                <option >Spain</option>
-                <option>Spain</option>
-                <option>Spain</option>
-            </DisplayOptions> */}
