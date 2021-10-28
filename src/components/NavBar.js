@@ -30,14 +30,17 @@ const NavBarTitle = styled.h2`
   display: flex;
   text-deoration: none;
   display: inline-block;
-  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 const Logo = styled.img`
-    height: 55px;
-    weight: 55px;
-    padding: 0 15px;
-`
+  height: 55px;
+  weight: 55px;
+  padding-left: 15px;
+`;
 // Components
 
 const NavBar = () => {
