@@ -27,9 +27,8 @@ const DisplayOptions = styled.select`
 
 // Component
 
-const WhereToWatchCountry = () => {
-const [selectValue, setSelectValue] = useState("ES")
-
+const WhereToWatchCountry = (props) => {
+const [selectValue, setSelectValue] = useState(props.country)
     const listOfCountries = [
         {
             name: 'Belgium', 
@@ -52,12 +51,13 @@ const [selectValue, setSelectValue] = useState("ES")
         const selectHandler = (e) => {
             console.log(e.target.value)
             setSelectValue(e.target.value)
+            props.setCountry(e.target.value)
         }
 
     return (
         <Container>
             <Title>Where to watch</Title>
-            <DisplayOptions value={selectValue} onChange ={selectHandler}> 
+            <DisplayOptions value={selectValue} onChange={selectHandler}>
                 {listOfCountries.map(country => <option value={country.code}>{country.name}</option>)}
             </DisplayOptions>
         </Container>
