@@ -14,7 +14,6 @@ const Nav = styled.nav`
 
 const NavBarContainer = styled.div`
   background: darkorange;
-  width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
