@@ -8,20 +8,35 @@ import styled from 'styled-components'
 
 // Styles
 
-const Button= styled.button`
+const Container= styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+` 
 
+const Button= styled.button`
+    border: 1px solid black;
+    padding: 8px 25px;
+    border-radius: 4px;
+    :hover {
+        background: #98BAE7;
+        color: black;
+     }
+     &:hover {
+         color: blue;
+        }
+     font-size: 15px;
 ` 
 
 // Components
 
-const WhereToWatchMethod = () => {
+const WhereToWatchMethod = (props) => {
     return (
-        <div>
-            <Button>Stream</Button>
-            <Button>Buy</Button>
-            <Button>Rent</Button>
-            <Button>Free</Button>
-        </div>
+        <Container>
+            <Button onClick={() => props.setWatchMethod('flatrate')}>Stream</Button>
+            <Button onClick={() => props.setWatchMethod('buy')}>Buy</Button>
+            <Button onClick={() => props.setWatchMethod('rent')}>Rent</Button>
+        </Container>
     )
 }
 

@@ -10,6 +10,17 @@ import WhereToWatchMethod from "./WhereToWatchMethod"
 
 import { useState, useEffect } from 'react'
 import axios from "axios";
+import styled from 'styled-components'
+
+// Styles
+
+const IconContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 20px;
+  place-content: center;
+`
 
 // Component
 
@@ -48,15 +59,18 @@ function WhereToWatch(props) {
             <WhereToWatchCountry country={country} setCountry={setCountry}/>
             <WhereToWatchMethod watchMethod={watchMethod} setWatchMethod={setWatchMethod}/>
 
-            {/* Map through the data and display the icons */}
-            {props.watchData && props.watchData[country][watchMethod].map(item =>
-                <>
-                    {/* Move to where to watch icon */}
-                    <h3>{item.provider_name}</h3>
-                    <img width='30px'src={`http://image.tmdb.org/t/p/w500${item.logo_path}`} alt={item.provider_name}/>
-                    {/*<WhereToWatchIcon />*/}
-                </>
-            )}
+            <IconContainer>
+                {/* Map through the data and display the icons */}
+                {props.watchData && props.watchData[country][watchMethod].map(item =>
+                    <>
+
+                        {/* Move to where to watch icon */}
+                            <img width='50px'src={`http://image.tmdb.org/t/p/w500${item.logo_path}`} alt={item.provider_name}/>
+                        {/*<WhereToWatchIcon />*/}
+
+                    </>
+                )}
+            </IconContainer>
         </div>
     )
 }
