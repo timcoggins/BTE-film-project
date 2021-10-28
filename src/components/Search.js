@@ -18,13 +18,31 @@ gap: 20px;
 `
 
 const SearchFor =styled.input`
-    width: 300px;
+    // width: 280px;
+    // height: 35px;
+    padding: 10px 40px;
+    font-size: 15px;
     border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    :focus::placeholder {
+        color: transparent;
+      }
+    ::-webkit-input-placeholder {
+        font-size: 15px;
+    
 `
 
 const Button = styled.button`
-    width: 100px;
+    padding: 8px 25px;
     border: 1px solid black;
+    border-radius: 10px;
+    :hover {
+        background: #98BAE7; 
+        color: black;
+    }
+    font-size: 15px;
+
 ` 
  
 // Component
