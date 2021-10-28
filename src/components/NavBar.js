@@ -9,31 +9,51 @@ import styled from 'styled-components'
 
 // Styles
 
-const Container = styled.div`
-    background: #98bae7;
-    width: 100%;
-    display: flex;
-`
-const Title = styled.h2`
-    margin: 0;
-    padding: 5px;
-    color: black;
-`
+const Nav = styled.nav` 
+`;
+
+const NavBarContainer = styled.div`
+  background: darkorange;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: sticky;
+`;
+const NavBarTitle = styled.h2`
+  margin: 0;
+  padding: 0px;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  text-deoration: none;
+  display: inline-block;
+
+  &:hover {
+    color: white;
+  }
+`;
 
 const Logo = styled.img`
-    height: 30px;
-    weight: 30px;
-    padding: 5px;
-`
+  height: 55px;
+  weight: 55px;
+  padding-left: 15px;
+`;
 // Components
 
 const NavBar = () => {
     return (
-        <Container>
-            <Logo src='./clapper-board.png'/>
-            <Link to="/"><Title>Movie App</Title></Link>
-        </Container>
-    )
+      <Nav>
+        <NavBarContainer>
+          <Logo src="./Logo_cinema.png" />
+          <Link to="/">
+            <NavBarTitle>movie app</NavBarTitle>
+          </Link>
+        </NavBarContainer>
+      </Nav>
+    );
 }
 
-export default NavBar
+export default NavBar;
