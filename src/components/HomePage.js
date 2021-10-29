@@ -34,6 +34,20 @@ const SearchCard = styled.div`
   }
 `
 
+const CardHeader = styled.div`
+  /*display: flex;
+  place-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;*/
+  h3 {
+    margin: 10px 0;
+  }
+  p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+`
+
 // Components
 
 const HomePage = () => {
@@ -78,10 +92,12 @@ const HomePage = () => {
         {searchData.length !== 0 ? (
           searchData.map((item) => (
             <SearchCard key={uid()}>
-              <h3>
-                <Link to={`/film/${item.id}`}>{item.title}</Link>
-              </h3>
-              <p>{item.release_date}</p>
+              <CardHeader>
+                  <h3>
+                    <Link to={`/film/${item.id}`}>{item.title}</Link>
+                  </h3>
+                  <p>{item.release_date}</p>
+              </CardHeader>
               <img
                 src={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title}
