@@ -17,6 +17,7 @@ import styled from 'styled-components'
 const IconContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 5px;
   padding: 20px;
   place-content: center;
@@ -26,7 +27,7 @@ const IconContainer = styled.div`
 
 function WhereToWatch(props) {
 
-    const [country, setCountry] = useState('BE')
+    const [country, setCountry] = useState('DE')
     const [watchMethod, setWatchMethod] = useState('flatrate')
 
     /**
@@ -38,7 +39,7 @@ function WhereToWatch(props) {
             let data = response.data;
             // Put the country code into the state for country
             setCountry(data.country_code)
-            console.log(data.country_code)
+            console.log(`You are in ${data.country_code}`)
         }).catch((error) => {
             // Log any errors
             console.log(error);
@@ -51,6 +52,7 @@ function WhereToWatch(props) {
         getGeoInfo()
     }, [])
 
+
     // JSX
 
     return (
@@ -61,7 +63,7 @@ function WhereToWatch(props) {
 
             <IconContainer>
                 {/* Map through the data and display the icons */}
-                {props.watchData && props.watchData[country][watchMethod].map(item =>
+                {props.watchData && props.watchData[country][watchMethod]?.map(item =>
                     <>
 
                         {/* Move to where to watch icon */}

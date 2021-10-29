@@ -5,7 +5,7 @@
  */
 
 import styled from 'styled-components'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 
 // Styles
@@ -48,11 +48,15 @@ const [selectValue, setSelectValue] = useState(props.country)
         }
     ]
 
+        // Handler for the select
         const selectHandler = (e) => {
             console.log(e.target.value)
             setSelectValue(e.target.value)
             props.setCountry(e.target.value)
         }
+
+        // When the country finder updates in the parent, select the country automatically
+        useEffect(() => setSelectValue(props.country), [props.country])
 
     return (
         <Container>
