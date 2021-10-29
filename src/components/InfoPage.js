@@ -24,6 +24,25 @@ const InfoImage = styled.img`
   padding: 0;
 `
 
+const FilmInfo = styled.div`
+  padding: 0 10px;
+`
+
+const TitleBar = styled.div`
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+  h1 {
+    margin: 10px 0;
+  }
+  p {
+    background: #fe8b01;
+    border-radius: 50%;
+    padding: 12px;
+    color: white;
+  }
+`
+
 // Component
 
 const InfoPage = () => {
@@ -74,10 +93,15 @@ const InfoPage = () => {
     return(
         <>
             {/* Only display the information once the data has arrived */}
-            { filmData && <h1>{filmData.title}</h1> }
-            { filmData && <h3>{filmData.release_date}</h3> }
-            { filmData && <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>}
-            { filmData && <p>{filmData.overview}</p> }
+            {filmData && <FilmInfo>
+                 <TitleBar>
+                     <h1>{filmData.title}</h1>
+                    <p>{filmData.vote_average}</p>
+                 </TitleBar>
+                <p>Released: {filmData.release_date}</p>
+                <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
+                <p>{filmData.overview}</p>
+            </FilmInfo> }
 
             <WhereToWatch watchData={watchData} />
             <Trailer />

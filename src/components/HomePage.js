@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 
-import HomePageImage from "./HomePageImage"
+//import HomePageImage from "./HomePageImage"
 import Search from "./Search"
 import Carousel from "./Carousel"
 
@@ -32,20 +32,27 @@ const SearchCard = styled.div`
   img {
     width: 100%;
   }
-`
-
-const CardHeader = styled.div`
-  /*display: flex;
-  place-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;*/
-  h3 {
-    margin: 10px 0;
-  }
   p {
     font-size: 14px;
     margin: 5px 0;
   }
+`
+
+const CardHeader = styled.div`
+  display: flex;
+  place-content: space-between;
+  align-items: center;
+  h3 {
+    margin: 10px 0;
+    color: black;
+  }
+  p {
+    background: #fe8b01;
+    border-radius: 50%;
+    padding: 12px;
+    color: white;
+  }
+
 `
 
 // Components
@@ -96,8 +103,10 @@ const HomePage = () => {
                   <h3>
                     <Link to={`/film/${item.id}`}>{item.title}</Link>
                   </h3>
-                  <p>{item.release_date}</p>
+                  <p>{item.vote_average}</p>
               </CardHeader>
+                <p>{item.release_date}</p>
+
               <img
                 src={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title}
