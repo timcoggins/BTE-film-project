@@ -65,8 +65,8 @@ function WhereToWatch(props) {
                     <>
 
                         {/* Move to where to watch icon */}
-                            <img width='50px'src={`http://image.tmdb.org/t/p/w500${item.logo_path}`} alt={item.provider_name}/>
-                        {/*<WhereToWatchIcon />*/}
+                        {/* <img width='50px'src={`http://image.tmdb.org/t/p/w500${item.logo_path}`} alt={item.provider_name}/>*/}
+                        <WhereToWatchIcon data={item}/>
 
                     </>
                 )}
