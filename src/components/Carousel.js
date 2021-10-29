@@ -12,7 +12,9 @@ const Container = styled.div`
 
 `
 
-const Title = styled.h3``
+const Title = styled.h3`
+    padding: 15px;
+`
 
 const ItemContainer = styled.div`
     display: flex;
