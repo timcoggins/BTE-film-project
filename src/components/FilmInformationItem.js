@@ -20,13 +20,14 @@ padding-left: 10px;
 line-height: 2 ;
 margin-top: 0 ;
 margin-bottom: 0 ;
+font-size: 15px;
 `
 const Text = styled.p`
 padding-left: 5px;
 line-height: 2 ;
 margin-top: 0 ;
 margin-bottom: 0 ;
-font-size: 15px;
+font-size: 14px;
 `
 
 // Component

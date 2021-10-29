@@ -12,11 +12,17 @@ import FilmInformationItem from './FilmInformationItem'
 // Component
 
 const FilmInformation = (props) => {
-   console.log("hello")
-   console.log(props.filmData.runtime)
+    console.log("pizza", props)
     return (
         <div>
-            {/* <FilmInformationItem title={"runtime"} text={props.filmData.title}/> */}
+            <FilmInformationItem title={"Original title:"} text={props.filmData['original_title']} />
+            <FilmInformationItem title={"Release date:"} text={props.filmData['release_date']} />
+            <FilmInformationItem title={"Rating:"} text={props.filmData['vote_average']} />
+            <FilmInformationItem title={"Popularity:"} text={props.filmData['popularity']} />
+            <FilmInformationItem title={"Original language:"} text={props.filmData["original_language"]} />
+
+
+
         </div>
     )
 }
