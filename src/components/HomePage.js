@@ -26,6 +26,9 @@ const HomeContainer = styled.div`
 const SearchCard = styled.div`
   margin: 20px;
   border: 1px gainsboro solid;
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
   img {
     width: 100%;
   }

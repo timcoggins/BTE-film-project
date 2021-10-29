@@ -18,9 +18,9 @@ gap: 20px;
 `
 
 const SearchFor =styled.input`
-    // width: 280px;
+    width: 300px;
     // height: 35px;
-    padding: 10px 40px;
+    padding: 10px 10px;
     font-size: 15px;
     border: 1px solid black;
     border-radius: 10px;
