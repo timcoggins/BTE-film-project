@@ -8,16 +8,15 @@
 //import styled from 'styled-components'
 import FilmInformationItem from './FilmInformationItem'
 
+
 // Component
 
-export const FilmInformation = () => {
+const FilmInformation = (props) => {
+   console.log("hello")
+   console.log(props.filmData.runtime)
     return (
         <div>
-            <FilmInformationItem />
-            <FilmInformationItem />
-            <FilmInformationItem />
-            <FilmInformationItem />
-            <FilmInformationItem />
+            {/* <FilmInformationItem title={"runtime"} text={props.filmData.title}/> */}
         </div>
     )
 }
