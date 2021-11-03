@@ -63,12 +63,12 @@ function WhereToWatch(props) {
 
             <IconContainer>
                 {/* Map through the data and display the icons */}
-                {props.watchData && props.watchData[country][watchMethod]?.map(item =>
+                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod]?.map(item =>
                     <>
 
                         {/* Move to where to watch icon */}
-                            <img width='50px'src={`http://image.tmdb.org/t/p/w500${item.logo_path}`} alt={item.provider_name}/>
-                        {/*<WhereToWatchIcon />*/}
+                        {/* <img width='50px'src={`http://image.tmdb.org/t/p/w500${item.logo_path}`} alt={item.provider_name}/>*/}
+                        <WhereToWatchIcon data={item}/>
 
                     </>
                 )}
