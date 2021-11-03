@@ -10,9 +10,19 @@ import styled from 'styled-components'
 
 // Style
 
-const VideoLink = styled.img`
-width: 360px;
-`
+const VideoLink = styled.div`
+`;
+
+const TrailerContainer = styled.div`
+`;
+
+const TrailerIframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  @media (min-width: 1025px);
+`;
+
 
 // Component
 
@@ -42,19 +52,20 @@ const Trailer = () => {
     useEffect(() => console.log(trailerData), [trailerData]);
  
     return (
-      <>
-        Trailer
-        <VideoLink src="" />
-            {trailerData && <iframe
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-            ></iframe>}
-      </>
+        <TrailerContainer>
+                Trailer
+                <VideoLink src="" />
+                {trailerData && (
+                <TrailerIframe
+                    src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></TrailerIframe>
+            )}
+            
+        </TrailerContainer>
     );
 }
 
