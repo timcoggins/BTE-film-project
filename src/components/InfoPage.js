@@ -105,7 +105,7 @@ const InfoPage = () => {
 
             <WhereToWatch watchData={watchData} />
             <Trailer />
-            <FilmInformation filmData={filmData}/>
+            { filmData && <FilmInformation filmData={filmData}/>}
             <Synopsis />
             <Carousel />
         </>
