@@ -63,7 +63,7 @@ function WhereToWatch(props) {
 
             <IconContainer>
                 {/* Map through the data and display the icons */}
-                {props.watchData && props.watchData[country][watchMethod]?.map(item =>
+                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod]?.map(item =>
                     <>
 
                         {/* Move to where to watch icon */}
