@@ -32,9 +32,13 @@ const Button= styled.button`
       color: white;
     `}
   
-` 
+`
 
-// Components
+/**
+ * Where to watch method component
+ * @param props
+ * @returns {JSX.Element}
+ */
 
 const WhereToWatchMethod = (props) => {
     return (

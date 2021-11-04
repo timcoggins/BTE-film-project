@@ -52,23 +52,29 @@ const CardHeader = styled.div`
     padding: 12px;
     color: white;
   }
-
 `
 
-// Components
+/**
+ * Home page component
+ * @returns {JSX.Element}
+ */
 
 const HomePage = () => {
 
     // Setup a state variable to store the search results
     const [searchData, setSearchData] = useState([])
+    const [popularData, setPopularData] = useState([])
 
-    // Handler for when the user presses the search button
+    /**
+     * Handler for when the user search for something
+     * @param query
+     */
     const searchHandler = (query) => {
 
         // Check to see if the user search box is empty, exit the function if it is
         if(query === '') {
             console.log('Search query was empty')   // TODO Make this into something more useful
-            return
+            return;
         }
 
         // Encode the search query to encodes the spaces, special characters etc
@@ -82,16 +88,26 @@ const HomePage = () => {
             .catch(error => console.log(error))
     }
 
-    // Used for development to see the data as it comes in
-    useEffect(()=> console.log(searchData), [searchData])
 
+    // Used for development to see the data as it comes in
+    // useEffect(()=> console.log(searchData), [searchData])
+
+    // Get the data for trending movies of the day
+    useEffect(() => {
+        axios
+            .get(`https://api.themoviedb.org/3/trending/movie/day?api_key=f60b20c74e47d524d562b3d0b29f6aeb`)
+            .then(response => setPopularData(response.data.results))
+            .catch(error => console.log(error))
+    }, [])
+
+    // JSX
 
     return (
       <HomeContainer>
         {/* Show the home page images but if the user has search results don't display it */}
         {/*searchData.length === 0 ? <HomePageImage src='http://placekitten.com/200/300'/> : null*/}
 
-                {/* The search component for finding a movie */}
+        {/* The search component for finding a movie */}
         <Search searchHandler={searchHandler} />
 
         {/* TODO Make this into a separate component */}
@@ -105,8 +121,7 @@ const HomePage = () => {
                   </h3>
                   <p>{item.vote_average}</p>
               </CardHeader>
-                <p>{item.release_date}</p>
-
+              <p>{item.release_date}</p>
               <img
                 src={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title}
@@ -114,7 +129,7 @@ const HomePage = () => {
             </SearchCard>
           ))
         ) : (
-          <Carousel />
+          <Carousel data={popularData}/>
         )}
       </HomeContainer>
     );
