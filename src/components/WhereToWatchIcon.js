@@ -3,26 +3,24 @@
  * Shows an icon for a streaming service
  * 
  */
-import WhereToWatch from "./WhereToWatch";
 
+// Imports
 
-
-import styled from 'styled-components' 
+import styled from 'styled-components'
 
 // Styles
 
 const IconImg = styled.img`
-padding: 
-  margin: 1em;
-  border: 2px solid black;
+
+  border: 1px solid black;
   border-radius: 3px;
 `; 
 
-const IconName = styled.h6`
-
-` 
-
-// Component
+/**
+ * Component to draw the where to watch icon
+ * @param props
+ * @returns {JSX.Element}
+ */
 
 export const WhereToWatchIcon = (props) => {
   return (

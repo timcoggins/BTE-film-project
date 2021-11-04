@@ -3,9 +3,9 @@
  * Navbar for all pages
  * 
  */
-import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // Styles
 
@@ -26,7 +26,6 @@ const NavBarTitle = styled.h2`
   color: black;
   font-weight: bold;
   font-size: 1.5rem;
-  display: flex;
   text-deoration: none;
   display: inline-block;
 
@@ -36,19 +35,23 @@ const NavBarTitle = styled.h2`
 `;
 
 const Logo = styled.img`
-  height: 55px;
-  weight: 55px;
+  height: 40px;
+ 
   padding-left: 15px;
 `;
-// Components
+
+/**
+ * Navbar component
+ * @returns {JSX.Element}
+ */
 
 const NavBar = () => {
     return (
       <Nav>
         <NavBarContainer>
-          <Logo src="./Logo_cinema.png" />
+          <Logo src="/Logo_cinema.png" />
           <Link to="/">
-            <NavBarTitle>movie app</NavBarTitle>
+            <NavBarTitle>Movie app</NavBarTitle>
           </Link>
         </NavBarContainer>
       </Nav>

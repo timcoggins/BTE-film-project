@@ -3,3 +3,9 @@
   margin: 0 auto;
   background: white;
 }
+
+@media only screen and (max-width: 400px) {
+  .App {
+    width: 100%;
+  }
+}
