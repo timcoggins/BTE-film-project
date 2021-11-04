@@ -10,8 +10,12 @@ import axios from "axios";
 import styled from 'styled-components' 
 
 // Style
-
 const TrailerContainer = styled.div`
+`;
+
+const Title = styled.h3`
+  padding-left: 10px;
+  margin: 6px, 0px;
 `;
 
 const TrailerIframe = styled.iframe`
@@ -62,7 +66,7 @@ const Trailer = () => {
 
     return (
         <TrailerContainer>
-            <h3>Trailer</h3>
+            <Title>Trailer</Title>
                 {trailerData && (
                 <TrailerIframe
                     src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
