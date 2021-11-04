@@ -23,16 +23,18 @@ const NavBarContainer = styled.div`
 const NavBarTitle = styled.h2`
   margin: 0;
   padding: 0px;
-  color: black;
+  color: #000000;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-deoration: none;
   display: inline-block;
 
   &:hover {
     color: white;
+    
   }
 `;
+
 
 const Logo = styled.img`
   height: 40px;
@@ -51,7 +53,7 @@ const NavBar = () => {
         <NavBarContainer>
           <Logo src="/Logo_cinema.png" />
           <Link to="/">
-            <NavBarTitle>Movie app</NavBarTitle>
+            <NavBarTitle>WatchNow</NavBarTitle>
           </Link>
         </NavBarContainer>
       </Nav>
