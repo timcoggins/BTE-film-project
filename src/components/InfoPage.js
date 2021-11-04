@@ -12,8 +12,9 @@ import styled from 'styled-components'
 import WhereToWatch from './WhereToWatch'
 import Trailer from './Trailer'
 import FilmInformation from './FilmInformation'
-import Synopsis from './Synopsis'
+//import Synopsis from './Synopsis'
 import Carousel from './Carousel'
+import Footer from './Footer'
 
 
 // Styles
@@ -85,9 +86,9 @@ const InfoPage = () => {
     }, [id])
 
     // For development to see the incoming data
-    useEffect(() => console.log(filmData), [filmData]);
-    useEffect(() => console.log(watchData), [watchData]);
-    useEffect(() => console.log(similarFilmData), [similarFilmData]);
+    // useEffect(() => console.log(filmData), [filmData]);
+    // useEffect(() => console.log(watchData), [watchData]);
+    // useEffect(() => console.log(similarFilmData), [similarFilmData]);
 
     // JSX Rendering
     return(
@@ -106,8 +107,9 @@ const InfoPage = () => {
             <WhereToWatch watchData={watchData} />
             <Trailer />
             { filmData && <FilmInformation filmData={filmData}/>}
-            <Synopsis />
-            <Carousel />
+            {/*<Synopsis />*/}
+            <Carousel data={similarFilmData} />
+            <Footer/>
         </>
     )
 }

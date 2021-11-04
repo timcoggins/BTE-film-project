@@ -10,11 +10,11 @@ import styled from 'styled-components'
 // Styles
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-padding-top: 10px;
-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 20px;
 `
 
 const SearchFor =styled.input`
@@ -27,10 +27,10 @@ const SearchFor =styled.input`
     text-align: center;
     :focus::placeholder {
         color: transparent;
-      }
+    }
     ::-webkit-input-placeholder {
-        font-size: 15px;
-    
+      font-size: 15px;
+    }
 `
 
 const Button = styled.button`
@@ -42,20 +42,26 @@ const Button = styled.button`
         color: black;
     }
     font-size: 15px;
+`
 
-` 
- 
-// Component
+/**
+ * Search component
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 
 const Search = (props) => {
 
+    // Declare state variable
     const [searchInput, setSearchInput] = useState('')
+
+    // JSX
 
     return(
         <Container>
             <form>
                 <SearchFor type="text" placeholder='Search for a Movie/TV Show' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-                
             </form>
             <Button onClick={() => props.searchHandler(searchInput)}>Search</Button>
         </Container>
