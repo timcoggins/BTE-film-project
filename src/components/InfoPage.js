@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from "axios";
 import styled from 'styled-components'
+import formatDate from '../utils/formatDate'
 
 import WhereToWatch from './WhereToWatch'
 import Trailer from './Trailer'
@@ -99,7 +100,7 @@ const InfoPage = () => {
                      <h1>{filmData.title}</h1>
                     <p>{filmData.vote_average}</p>
                  </TitleBar>
-                <p>Released: {filmData.release_date}</p>
+                <p>Released: {formatDate(filmData.release_date)}</p>
                 <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
                 <p>{filmData.overview}</p>
             </FilmInfo> }
