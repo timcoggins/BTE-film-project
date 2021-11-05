@@ -119,7 +119,7 @@ const HomePage = () => {
                   <h3>
                     <Link to={`/film/${item.id}`}>{item.title}</Link>
                   </h3>
-                  <p>{item.vote_average}</p>
+                  <p>{item.vote_average < 10 ? item.vote_average.toFixed(1) : item.vote_average}</p>
               </CardHeader>
               <p>{item.release_date}</p>
               <img
