@@ -97,7 +97,7 @@ const InfoPage = () => {
             {filmData && <FilmInfo>
                  <TitleBar>
                      <h1>{filmData.title}</h1>
-                    <p>{filmData.vote_average}</p>
+                    <p>{filmData.vote_average.toFixed(1)}</p>
                  </TitleBar>
                 <p>Released: {filmData.release_date}</p>
                 <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
