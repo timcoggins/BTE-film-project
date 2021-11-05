@@ -53,7 +53,7 @@ const NavBar = () => {
         <NavBarContainer>
           <Logo src="/Logo_cinema.png" />
           <Link to="/">
-            <NavBarTitle>WatchNow</NavBarTitle>
+            <NavBarTitle>Film Hero</NavBarTitle>
           </Link>
         </NavBarContainer>
       </Nav>
