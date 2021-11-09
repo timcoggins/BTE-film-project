@@ -1,12 +1,5 @@
 # Film Hero
 
-<<<<<<< Updated upstream
-Live Site
-https://filmhero.netlify.app/
-
-To get started
-- npm install
-=======
 Live site: https://filmhero.netlify.app/
 
 Film Hero is a web application which enables users to find out where to stream, rent or buy a particular film or
@@ -34,4 +27,3 @@ To install the project locally
 - Clone the repository
 - npm install
 - npm start
->>>>>>> Stashed changes
