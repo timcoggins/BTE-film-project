@@ -15,6 +15,12 @@ const Container = styled.div`
     align-items: center;
     padding-top: 10px;
     gap: 20px;
+
+    @media screen and (min-width:700px) {  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 `
 
 const SearchFor =styled.input`
@@ -31,10 +37,19 @@ const SearchFor =styled.input`
     ::-webkit-input-placeholder {
       font-size: 15px;
     }
+
+    @media screen and (min-width:1141px) {
+        font-size: 16px;
+        padding: 13px 13px;
+        ::-webkit-input-placeholder {
+      font-size: 16px;
+    }
+    }
+
 `
 
 const Button = styled.button`
-    padding: 8px 25px;
+    padding: 8px 24px;
     border: 1px solid black;
     border-radius: 10px;
     :hover {
@@ -42,6 +57,11 @@ const Button = styled.button`
         color: black;
     }
     font-size: 15px;
+
+    @media screen and (min-width:1141px) {
+        padding: 13px 70px;
+        font-size: 16px;
+    }
 `
 
 /**

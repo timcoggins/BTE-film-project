@@ -1,7 +1,7 @@
 /**
- * 
+ *
  * Navbar for all pages
- * 
+ *
  */
 
 import styled from 'styled-components'
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 // Styles
 
-const Nav = styled.nav` 
+const Nav = styled.nav`
 `;
 
 const NavBarContainer = styled.div`
@@ -19,6 +19,7 @@ const NavBarContainer = styled.div`
   align-items: center;
   padding: 5px;
   position: sticky;
+
 `;
 const NavBarTitle = styled.h2`
   margin: 0;
@@ -31,15 +32,28 @@ const NavBarTitle = styled.h2`
 
   &:hover {
     color: white;
-    
+  }
+  @media screen and (min-width:500px) {
+  font-size: 1.6rem;
+  }
+
+  @media screen and (min-width:800px) {
+  font-size: 1.8rem;
   }
 `;
 
 
 const Logo = styled.img`
   height: 40px;
- 
+
   padding-left: 15px;
+
+ @media screen and (min-width:500px) {
+  height: 45px;
+  }
+  @media screen and (min-width:800px) {
+  height: 50px;
+  }
 `;
 
 /**

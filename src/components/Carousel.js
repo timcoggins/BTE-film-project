@@ -16,6 +16,13 @@ const Container = styled.div`
 
 const Title = styled.h3`
     padding: 15px;
+
+@media screen and (min-width:500px) {
+        font-size: 20px;
+    }
+      @media screen and (min-width:800px) {
+        font-size: 22px;
+    }
 `
 
 const ItemContainer = styled.div`
@@ -29,6 +36,13 @@ const Item = styled.img`
     width: 100px;
     background: gainsboro;
     border: 1px black solid;
+
+    @media screen and (min-width:500px) {
+        width: 150px;
+    }
+      @media screen and (min-width:800px) {
+        width: 190px;
+    }
 `
 
 /**
