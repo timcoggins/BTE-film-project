@@ -15,8 +15,9 @@ const Container = styled.div`
 `
 
 const Title = styled.h3`
-    padding: 15px;
-`
+  padding-left: 10px;
+  margin: 6px, 0px;
+`;
 
 const ItemContainer = styled.div`
     display: flex;
