@@ -63,7 +63,9 @@ const HomePage = () => {
 
     // Setup a state variable to store the search results
     const [searchData, setSearchData] = useState([])
+    const [tvData, setTvData] = useState([])
     const [popularData, setPopularData] = useState([])
+    const [toggleTV, setToggleTV] = useState(false)
 
     /**
      * Handler for when the user search for something
@@ -82,12 +84,18 @@ const HomePage = () => {
 
         // Get the data the with axios
         // TODO Better error handling
-        axios
+       axios
             .get(`https://api.themoviedb.org/3/search/movie?query=${encoded}&api_key=f60b20c74e47d524d562b3d0b29f6aeb`)
             .then(response => setSearchData([...response.data.results]))
             .catch(error => console.log(error))
-    }
-
+      
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/tv?query=${encoded}&api_key=f60b20c74e47d524d562b3d0b29f6aeb`
+        )
+        .then((response) => setTvData([...response.data.results]))
+        .catch((error) => console.log(error));
+    } 
 
     // Used for development to see the data as it comes in
     // useEffect(()=> console.log(searchData), [searchData])
@@ -101,25 +109,28 @@ const HomePage = () => {
     }, [])
 
     // JSX
-
     return (
       <HomeContainer>
         {/* Show the home page images but if the user has search results don't display it */}
         {/*searchData.length === 0 ? <HomePageImage src='http://placekitten.com/200/300'/> : null*/}
 
+      
         {/* The search component for finding a movie */}
         <Search searchHandler={searchHandler} />
 
+        <button onClick={() => setToggleTV(!toggleTV)}>toggle
+        </button>
+
         {/* TODO Make this into a separate component */}
         {/* Display each result on a card once we have the results data, if there is no data show the carousel */}
-        {searchData.length !== 0 ? (
-          searchData.map((item) => (
+      
+        {!toggleTV && searchData.map(item => 
             <SearchCard key={uid()}>
               <CardHeader>
-                  <h3>
-                    <Link to={`/film/${item.id}`}>{item.title}</Link>
-                  </h3>
-                  <p>{item.vote_average}</p>
+                <h3>
+                  <Link to={`/film/${item.id}`}>{item.title}</Link>
+                </h3>
+                <p>{item.vote_average}</p>
               </CardHeader>
               <p>{item.release_date}</p>
               <img
@@ -127,10 +138,25 @@ const HomePage = () => {
                 alt={item.title}
               />
             </SearchCard>
-          ))
-        ) : (
-          <Carousel data={popularData}/>
-        )}
+          )}
+
+        {toggleTV && tvData.map(item => 
+            <SearchCard key={uid()}>
+              <CardHeader>
+                <h3>
+                  <Link to={`/tv/${item.id}`}>{item.name}</Link>
+                </h3>
+                <p>{item.vote_average}</p>
+              </CardHeader>
+              <p>{item.release_date}</p>
+              <img
+                src={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
+                alt={item.name}
+              />
+            </SearchCard>
+          )}
+
+      <Carousel data={popularData} />
       </HomeContainer>
     );
 }

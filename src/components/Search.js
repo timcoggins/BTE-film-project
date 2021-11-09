@@ -58,14 +58,20 @@ const Search = (props) => {
 
     // JSX
 
-    return(
-        <Container>
-            <form>
-                <SearchFor type="text" placeholder='Search for a Movie/TV Show' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-            </form>
-            <Button onClick={() => props.searchHandler(searchInput)}>Search</Button>
-        </Container>
-    )
+    return (
+      <Container>
+        <form>
+          <SearchFor
+            type="text"
+            placeholder="Search for a Movie/Series/TV Show"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+        </form>
+        <Button onClick={() => props.searchHandler(searchInput)}>Search</Button>
+    
+      </Container>
+    );
 }
 
 export default Search
