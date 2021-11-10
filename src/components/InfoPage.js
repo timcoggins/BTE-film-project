@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from "axios";
 import styled from 'styled-components'
+import formatDate from '../utils/formatDate'
 
 import WhereToWatch from './WhereToWatch'
 import Trailer from './Trailer'
@@ -73,6 +74,8 @@ const InfoPage = () => {
 
     // State variable to store similar movies
     const [similarFilmData, setSimilarFilmData] = useState();
+  
+    
 
     // API Calls
     useEffect(()=> {
@@ -95,8 +98,9 @@ const InfoPage = () => {
         axios
             .get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=f60b20c74e47d524d562b3d0b29f6aeb`)
             .then(response => setSimilarFilmData(response.data.results))
-            .catch(error => console.log(error))
-
+          .catch(error => console.log(error))
+      
+   
     }, [id])
 
     // For development to see the incoming data
@@ -111,9 +115,9 @@ const InfoPage = () => {
             {filmData && <FilmInfo>
                  <TitleBar>
                      <h1>{filmData.title}</h1>
-                    <p>{filmData.vote_average}</p>
+                    <p>{filmData.vote_average < 10 ? filmData.vote_average.toFixed(1) : filmData.vote_average}</p>
                  </TitleBar>
-                <p>Released: {filmData.release_date}</p>
+                <p>Released: {formatDate(filmData.release_date)}</p>
                 <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
                 <p>{filmData.overview}</p>
             </FilmInfo> }

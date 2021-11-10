@@ -9,11 +9,11 @@ import styled from 'styled-components'
 
 // Styles
 
-const Container = styled.div`
+const SearchContainerForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 30px;
     gap: 20px;
 
     @media screen and (min-width:700px) {  
@@ -23,13 +23,14 @@ const Container = styled.div`
   }
 `
 
-const SearchFor =styled.input`
+const SearchInput =styled.input`
     width: 300px;
-    // height: 35px;
     padding: 10px 10px;
     font-size: 15px;
+  
     border: 1px solid black;
     border-radius: 10px;
+  
     text-align: center;
     :focus::placeholder {
         color: transparent;
@@ -48,13 +49,21 @@ const SearchFor =styled.input`
 
 `
 
+
 const Button = styled.button`
-    padding: 8px 24px;
+    padding: 8px 24px`;
+
+const SearchButton = styled.input`
+    width: 120px;
+    padding: 8px 25px;
+  
     border: 1px solid black;
     border-radius: 10px;
+    font-size: 15px;
+    color: black;
+  
     :hover {
-        background: #98BAE7; 
-        color: black;
+        background: #98BAE7;
     }
     font-size: 15px;
 
@@ -73,18 +82,18 @@ const Button = styled.button`
 
 const Search = (props) => {
 
-    // Declare state variable
+    // Declare state variable to store the user input
     const [searchInput, setSearchInput] = useState('')
 
     // JSX
-
     return(
-        <Container>
-            <form>
-                <SearchFor type="text" placeholder='Search for a Movie/TV Show' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-            </form>
-            <Button onClick={() => props.searchHandler(searchInput)}>Search</Button>
-        </Container>
+        <SearchContainerForm onSubmit={(e) => {
+            e.preventDefault();
+            props.searchHandler(searchInput)
+        }}>
+            <SearchInput type="text" placeholder='Search for a Movie/TV Show' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+            <SearchButton type="submit" value={'Search'} />
+        </SearchContainerForm>
     )
 }
 

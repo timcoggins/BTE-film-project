@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components'
+import countryCodes from "../assets/countryCodes";
 import {useState, useEffect} from 'react'
 import { uid } from 'uid'
 
@@ -28,29 +29,8 @@ const DisplayOptions = styled.select`
     padding:5px 90px 5px 0px;
     font-size: 15px;
     text-align: left;
+    width: 100%;
 `
-
-// TODO Autofill the list of countries
-
-const listOfCountries = [
-    {
-        name: 'Belgium',
-        code: "BE"
-    },
-    {
-        name: 'Spain',
-        code: "ES"
-    },
-    {
-        name: 'France',
-        code: "FR"
-    },
-    {
-        name: 'Germany',
-        code: "DE"
-    }
-];
-
 
 /**
  * Where to watch country component
@@ -75,12 +55,11 @@ const WhereToWatchCountry = (props) => {
     }
 
     // JSX
-
     return (
         <Container>
             <Title>Where to watch</Title>
             <DisplayOptions value={selectValue} onChange={selectHandler}>
-                {listOfCountries.map(country => <option key={uid()} value={country.code}>{country.name}</option>)}
+                {countryCodes.map(country => <option key={uid()} value={country.iso_3166_1}>{country.native_name}</option>)}
             </DisplayOptions>
         </Container>
     )

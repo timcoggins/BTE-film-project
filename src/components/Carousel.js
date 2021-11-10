@@ -23,7 +23,7 @@ const Title = styled.h3`
       @media screen and (min-width:800px) {
         font-size: 22px;
     }
-`
+`;
 
 const ItemContainer = styled.div`
     display: flex;
