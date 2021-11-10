@@ -60,6 +60,8 @@ const InfoPage = () => {
 
     // State variable to store similar movies
     const [similarFilmData, setSimilarFilmData] = useState();
+  
+    
 
     // API Calls
     useEffect(()=> {
@@ -82,8 +84,9 @@ const InfoPage = () => {
         axios
             .get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=f60b20c74e47d524d562b3d0b29f6aeb`)
             .then(response => setSimilarFilmData(response.data.results))
-            .catch(error => console.log(error))
-
+          .catch(error => console.log(error))
+      
+   
     }, [id])
 
     // For development to see the incoming data
