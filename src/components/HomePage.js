@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import formatDate from '../utils/formatDate'
 
 //import HomePageImage from "./HomePageImage"
 import Search from "./Search"
@@ -121,7 +122,7 @@ const HomePage = () => {
                   </h3>
                   <p>{item.vote_average < 10 ? item.vote_average.toFixed(1) : item.vote_average}</p>
               </CardHeader>
-              <p>{item.release_date}</p>
+              <p>Released: {formatDate(item.release_date)}</p>
               <img
                 src={`http://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title}

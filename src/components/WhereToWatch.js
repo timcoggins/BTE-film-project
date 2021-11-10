@@ -70,6 +70,7 @@ function WhereToWatch(props) {
                 { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod]?.map(item =>
                         <WhereToWatchIcon key={uid()} data={item}/>
                 )}
+                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod] === undefined && <p>Could not find any locations</p>}
             </IconContainer>
         </div>
     )
