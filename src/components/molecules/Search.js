@@ -23,7 +23,7 @@ const Search = (props) => {
             e.preventDefault();
             props.searchHandler(searchInput)
         }}>
-            <SearchInput type="text" placeholder='Search' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+            <SearchInput type="text" placeholder='Search for a title' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
             <SearchButton type="submit" value={'Search'} />
         </SearchForm>
     )
