@@ -22,6 +22,9 @@ const IconContainer = styled.div`
   gap: 5px;
   padding: 20px;
   place-content: center;
+
+  @media screen and (min-width:600px) {
+        justify-content: flex-start;
 `
 
 /**

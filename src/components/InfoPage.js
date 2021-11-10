@@ -23,6 +23,13 @@ const InfoImage = styled.img`
   width: 100%;
   margin: 0;
   padding: 0;
+  
+  @media screen and (min-width:600px) {
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  // width: 50%;
+  }
 `
 
 const FilmInfo = styled.div`
@@ -43,6 +50,13 @@ const TitleBar = styled.div`
     color: white;
   }
 `
+
+// const TrailerAndFilmData = styled.div`
+// @media screen and (min-width:600px) {
+//   flex-direction: row;
+//   justify-content: center;
+// }
+// `
 
 // Component
 
@@ -103,7 +117,6 @@ const InfoPage = () => {
                 <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
                 <p>{filmData.overview}</p>
             </FilmInfo> }
-
             <WhereToWatch watchData={watchData} />
             <Trailer />
             { filmData && <FilmInformation filmData={filmData}/>}

@@ -14,9 +14,15 @@ const Container =styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media screen and (min-width:600px) {
+         justify-content: flex-start;
+    }
 ` 
 const Title = styled.h3`
-
+@media screen and (min-width:600px) {
+    padding-right: 15px;
+    padding-left:10px;
 ` 
 const DisplayOptions = styled.select`
     padding:5px 90px 5px 0px;

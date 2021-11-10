@@ -13,6 +13,11 @@ const Container= styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
+    @media screen and (min-width:600px) {
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
 ` 
 
 const Button= styled.button`
