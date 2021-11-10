@@ -145,9 +145,6 @@ const HomePage = () => {
                 alt={item.title}
               />
             </SearchCard>
-          ))
-        ) : (
-          <Carousel data={popularData}/>
         )}
         </CardContainer>
 
