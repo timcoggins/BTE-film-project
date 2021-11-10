@@ -27,10 +27,10 @@ const theme = {
         // Buttons
         ButtonBackground: '#ffffff',
         ButtonBackgroundActive: '#000000',
-        ButtonBackgroundHover: '#b6b6b6',
+        ButtonBackgroundHover: '#a7d2e8',
         ButtonFontColor: '#000000',
         ButtonFontColorActive: '#ffffff',
-        ButtonFontColorHover: '#000000',
+        ButtonFontColorHover: '#ffffff',
 
         // Genre Tags
         BubbleBackground: '#000000',

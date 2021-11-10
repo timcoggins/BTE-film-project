@@ -15,7 +15,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h3`
-    padding: 15px;
+    //padding: 15px;
 
 @media screen and (min-width:500px) {
         font-size: 20px;

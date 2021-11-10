@@ -71,9 +71,13 @@ const HomePage = () => {
             <Search searchHandler={searchHandler} />
 
             {/* TODO improve this */}
-            <FilterContainer>
+            {((searchData.length > 0) || (tvData.length > 0)) && <FilterContainer>
+                {!toggleTV && <p>Found {searchData.length} results:</p>}
+                {toggleTV && <p>Found {tvData.length} results:</p>}
                 <Button onClick={() => setToggleTV(!toggleTV)}>{toggleTV ? 'Show Films' : 'Show TV Series'}</Button>
-            </FilterContainer>
+            </FilterContainer>}
+
+
             {/* Display each result on a card once we have the results data, if there is no data show the carousel */}
             <ResultCardContainer>
                 {!toggleTV && searchData.map(item => <SearchResultCard key={uid()} item={item} />)}

@@ -5,11 +5,14 @@
 import styled from "styled-components";
 
 const ResultCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
     @media screen and (min-width:500px) {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-        flex-wrap: wrap;
+
+      justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
     `
 
 export default ResultCardContainer;

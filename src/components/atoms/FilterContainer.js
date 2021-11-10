@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 const FilterContainer = styled.div`
     display: flex;
-    place-content: center;
+    place-content: space-between;
+    align-items: center;
     margin: 20px 0;
 `;
 

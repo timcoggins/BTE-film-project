@@ -9,7 +9,7 @@ const SearchButton = styled.input`
     padding: 8px 25px;
   
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 4px;
     font-size: 15px;
 
     color: ${props => props.theme.colors.ButtonFontColor};
