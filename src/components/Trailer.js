@@ -10,8 +10,12 @@ import axios from "axios";
 import styled from 'styled-components' 
 
 // Style
-
 const TrailerContainer = styled.div`
+`;
+
+const Title = styled.h3`
+  padding-left: 10px;
+  margin: 6px, 0px;
 `;
 
 const TrailerIframe = styled.iframe`
@@ -35,20 +39,20 @@ const Trailer = () => {
     // State variable to store the trailer data
     const [trailerData, setTrailerData] = useState()
 
-    // URL for the API endpoint
-    const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=f60b20c74e47d524d562b3d0b29f6aeb`;
 
     /**
      * Get the data when the component loads
      */
     // TODO Error Handling
     useEffect(() => {
+        // URL for the API endpoint
+        const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=f60b20c74e47d524d562b3d0b29f6aeb`;
+        // Fetch the trailer data
         axios
             .get(url)
             .then((response) => checkTrailer(response.data))
             .catch((error) => console.log(error));
-        // eslint-disable-next-line
-    }, [])
+    }, [id])
 
     /**
      * Checks if the trailer exists and is on youtube
@@ -62,7 +66,7 @@ const Trailer = () => {
 
     return (
         <TrailerContainer>
-            <h3>Trailer</h3>
+            <Title>Trailer</Title>
                 {trailerData && (
                 <TrailerIframe
                     src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
