@@ -1,36 +1,13 @@
 /**
- * 
+ * WhereToWatchCountry.js
  * Allows the user to select which country they live in
- * 
  */
-
-import styled from 'styled-components'
-import countryCodes from "../assets/countryCodes";
+import countryCodes from "../../assets/countryCodes";
 import {useState, useEffect} from 'react'
 import { uid } from 'uid'
-
-// Styles
-
-const Container =styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    @media screen and (min-width:600px) {
-         justify-content: flex-start;
-    }
-` 
-const Title = styled.h3`
-@media screen and (min-width:600px) {
-    padding-right: 15px;
-    padding-left:10px;
-` 
-const DisplayOptions = styled.select`
-    padding:5px 90px 5px 0px;
-    font-size: 15px;
-    text-align: left;
-    width: 100%;
-`
+import H3 from "../atoms/H3";
+import Select from "../atoms/Select";
+import CountryContainer from "../atoms/CountryContainer"
 
 /**
  * Where to watch country component
@@ -56,12 +33,12 @@ const WhereToWatchCountry = (props) => {
 
     // JSX
     return (
-        <Container>
-            <Title>Where to watch</Title>
-            <DisplayOptions value={selectValue} onChange={selectHandler}>
+        <CountryContainer>
+            <H3>Where to watch</H3>
+            <Select value={selectValue} onChange={selectHandler}>
                 {countryCodes.map(country => <option key={uid()} value={country.iso_3166_1}>{country.native_name}</option>)}
-            </DisplayOptions>
-        </Container>
+            </Select>
+        </CountryContainer>
     )
 }
 

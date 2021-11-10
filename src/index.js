@@ -1,12 +1,20 @@
+/**
+ * index.js
+ * Insertion point for react
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import Theme from './styles/Theme'
+import GlobalStyle from "./styles/GlobalStyles";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Theme>
+            <GlobalStyle/>
+            <App />
+        </Theme>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 

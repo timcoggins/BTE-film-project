@@ -9,11 +9,11 @@ import { ThemeProvider } from "styled-components";
 const theme = {
     colors: {
         // Backgrounds
-        PageBackground: '#FFFFFF',
+        NavBarBackground: '#a7d2e8',
+        PageBackground: '#ffffff',
         CardBackground: '#FFFFFF',
-        NavBarBackground: '#FF8C00',
-        FooterBackground: '#FF8C00',
-        RatingBackground: '#FF8C00',
+        FooterBackground: '#a7d2e8',
+        RatingBackground: '#a7d2e8',
 
         // Font Colours
         SiteTitle: '#000000',
@@ -21,18 +21,23 @@ const theme = {
         Heading: '#000000',
         HeadingHover: '#222222',
         Paragraph: '#000000',
+        Footer: '#FFFFFF',
+        Rating: '#FFFFFF',
 
         // Buttons
-        ButtonBackground: 'gray',
-        ButtonFont: '#000000',
-        ButtonActive: '#000000',
+        ButtonBackground: '#ffffff',
+        ButtonBackgroundActive: '#000000',
+        ButtonBackgroundHover: '#b6b6b6',
+        ButtonFontColor: '#000000',
+        ButtonFontColorActive: '#ffffff',
+        ButtonFontColorHover: '#000000',
 
         // Genre Tags
         BubbleBackground: '#000000',
         BubbleFont: '#FFFFFF'
 
     },
-    fonts: ["sans-serif", "Poppins"],
+    fonts: ["sans-serif", "Open Sans"],
     fontSizes: {
         small: "1em",
         medium: "2em",

@@ -1,11 +1,20 @@
+/**
+ * App.js
+ * Main app component
+ */
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import NavBar from './components/NavBar';
-import HomePage from './components/HomePage';
-import InfoPage from './components/InfoPage';
+import NavBar from './components/molecules/NavBar';
+import HomePage from './pages/HomePage';
+import InfoPage from './pages/InfoPage';
+import Footer from './components/molecules/Footer'
 
 import './App.css';
 
+/**
+ * App
+ * @returns {JSX.Element}
+ */
 function App() {
   return (
     <Router>
@@ -22,6 +31,7 @@ function App() {
             <InfoPage />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
