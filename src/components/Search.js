@@ -15,6 +15,12 @@ const SearchContainerForm = styled.form`
     align-items: center;
     padding-top: 30px;
     gap: 20px;
+
+    @media screen and (min-width:700px) {  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 `
 
 const SearchInput =styled.input`
@@ -32,7 +38,20 @@ const SearchInput =styled.input`
     ::-webkit-input-placeholder {
       font-size: 15px;
     }
+
+    @media screen and (min-width:1141px) {
+        font-size: 16px;
+        padding: 13px 13px;
+        ::-webkit-input-placeholder {
+      font-size: 16px;
+    }
+    }
+
 `
+
+
+const Button = styled.button`
+    padding: 8px 24px`;
 
 const SearchButton = styled.input`
     width: 120px;
@@ -45,6 +64,12 @@ const SearchButton = styled.input`
   
     :hover {
         background: #98BAE7;
+    }
+    font-size: 15px;
+
+    @media screen and (min-width:1141px) {
+        padding: 13px 70px;
+        font-size: 16px;
     }
 `
 
