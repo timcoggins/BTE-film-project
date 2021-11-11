@@ -8,6 +8,7 @@ import Bubble from "../atoms/Bubble";
 import BubbleContainer from "../atoms/BubbleContainer";
 import H4 from '../atoms/H4'
 import TD from '../atoms/TD'
+import H3 from "../atoms/H3";
 
 /**
  * Film Information component
@@ -15,7 +16,8 @@ import TD from '../atoms/TD'
  * @returns {JSX.Element}
  */
 const FilmInformation = (props) => {
-    return (
+    return (<>
+            <H3>Details</H3>
         <table>
             <FilmInformationItem title={"Original title:"} text={props.filmData['original_title']} />
             <FilmInformationItem title={"Release date:"} text={props.filmData['release_date']} />
@@ -31,6 +33,7 @@ const FilmInformation = (props) => {
                 </BubbleContainer></TD>
             </tr>
         </table>
+        </>
     )
 }
 

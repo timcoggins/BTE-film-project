@@ -20,7 +20,6 @@ import InfoTitleBar from "../components/atoms/InfoTitleBar";
 import InfoImage from "../components/atoms/InfoImage"
 import Box from "../components/atoms/Box"
 
-
 /**
  * InfoPage
  * @returns {JSX.Element}
