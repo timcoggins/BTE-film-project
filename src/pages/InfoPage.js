@@ -81,7 +81,7 @@ const InfoPage = (props) => {
                 </Box>
             </> }
 
-            <Carousel data={similarFilmData} />
+            <Carousel data={similarFilmData} media={props.media}/>
         </MainContainer>
     )
 }
