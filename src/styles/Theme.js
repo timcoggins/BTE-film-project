@@ -10,12 +10,17 @@ import ThemeContext from "../contexts/ThemeContext";
 // Styles
 const lightTheme = {
     colors: {
+
+        // Border Color
+        BorderColor: '#DCDCDC',
+
         // Backgrounds
         NavBarBackground: '#a7d2e8',
         PageBackground: '#ffffff',
         CardBackground: '#FFFFFF',
         FooterBackground: '#a7d2e8',
         RatingBackground: '#a7d2e8',
+        CardOverlayBackground: '#d5d5d5',
 
         // Font Colours
         SiteTitle: '#000000',
@@ -34,6 +39,10 @@ const lightTheme = {
         ButtonFontColorActive: '#ffffff',
         ButtonFontColorHover: '#ffffff',
 
+        // Input
+        InputFontColor: '#000000',
+        InputBackgroundColor: '#FFFFFF',
+
         // Genre Tags
         BubbleBackground: '#000000',
         BubbleFont: '#FFFFFF'
@@ -49,12 +58,17 @@ const lightTheme = {
 
 const darkTheme = {
     colors: {
+
+        // Border Color
+        BorderColor: '#000000',
+
         // Backgrounds
         NavBarBackground: '#29617c',
         PageBackground: '#1c1c1c',
         CardBackground: '#1c1c1c',
         FooterBackground: '#29617c',
         RatingBackground: '#29617c',
+        CardOverlayBackground: '#1c1c1c',
 
         // Font Colours
         SiteTitle: '#FFFFFF',
@@ -68,10 +82,14 @@ const darkTheme = {
         // Buttons
         ButtonBackground: '#313131',
         ButtonBackgroundActive: '#000000',
-        ButtonBackgroundHover: '#a7d2e8',
+        ButtonBackgroundHover: '#29617c',
         ButtonFontColor: '#FFFFFF',
         ButtonFontColorActive: '#ffffff',
         ButtonFontColorHover: '#ffffff',
+
+        // Input
+        InputFontColor: '#FFFFFF',
+        InputBackgroundColor: '#313131',
 
         // Genre Tags
         BubbleBackground: '#FFFFFF',

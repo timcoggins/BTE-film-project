@@ -3,9 +3,11 @@
  * Main app component
  */
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Theme from "./styles/Theme";
 import ThemeContext from "./contexts/ThemeContext";
+import { GlobalStyle, GlobalStyleDark } from "./styles/GlobalStyles";
+
 
 import NavBar from './components/molecules/NavBar';
 import HomePage from './pages/HomePage';
@@ -20,10 +22,17 @@ import './App.css';
  */
 function App() {
 
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
+  /*useEffect(() => localStorage.setItem('darkMode', darkMode.toString()), [darkMode])
+  useEffect(() => {
+    console.log(typeof(localStorage.getItem('darkMode')))
+    if(localStorage.getItem('darkMode') === 'false') setDarkMode(true)
+    else setDarkMode(false)
+  }, [])*/
 
   return (
       <ThemeContext.Provider value={{darkMode, setDarkMode}}>
+        {darkMode ? <GlobalStyleDark/> : <GlobalStyle/>}
         <Theme>
           <Router>
             <div className="App">

@@ -8,9 +8,12 @@ const SearchInput = styled.input`
     width: 300px;
     padding: 10px;
     font-size: 15px;
-  
-    border: 1px solid black;
+
+    border: 1px ${props => props.theme.colors.BorderColor} solid;
     border-radius: 10px;
+
+    color: ${props => props.theme.colors.InputFontColor};
+    background: ${props => props.theme.colors.InputBackgroundColor};
   
     text-align: center;
     :focus::placeholder {
