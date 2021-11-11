@@ -3,6 +3,9 @@
  * Main app component
  */
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from 'react'
+import Theme from "./styles/Theme";
+import ThemeContext from "./contexts/ThemeContext";
 
 import NavBar from './components/molecules/NavBar';
 import HomePage from './pages/HomePage';
@@ -16,24 +19,31 @@ import './App.css';
  * @returns {JSX.Element}
  */
 function App() {
+
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/movie/:id">
-            <InfoPage media={'movie'}/>
-          </Route>
-          <Route path="/tv/:id" >
-            <InfoPage media={'tv'}/>
-          </Route>
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+      <ThemeContext.Provider value={{darkMode, setDarkMode}}>
+        <Theme>
+          <Router>
+            <div className="App">
+              <NavBar />
+              <Switch>
+                <Route exact path="/">
+                  <HomePage />
+                </Route>
+                <Route path="/movie/:id">
+                  <InfoPage media={'movie'}/>
+                </Route>
+                <Route path="/tv/:id" >
+                  <InfoPage media={'tv'}/>
+                </Route>
+              </Switch>
+              <Footer />
+            </div>
+          </Router>
+        </Theme>
+      </ThemeContext.Provider>
   );
 }
 

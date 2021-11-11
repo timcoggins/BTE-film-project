@@ -10,8 +10,13 @@ const Nav = styled.nav`
     padding: 5px;
     
     display: flex;
+    place-content: space-between;
     align-items: center;
-    //position: sticky;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
 `;
 
 export default Nav
