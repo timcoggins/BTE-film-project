@@ -40,7 +40,7 @@ const ResultCard = styled.div`
     
     &:hover {
         section {
-          opacity: 1;
+          opacity: 0.9;
         }
     }
     

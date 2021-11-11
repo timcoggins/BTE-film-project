@@ -11,6 +11,7 @@ import IconContainer from "../atoms/IconContainer";
 import WhereToWatchCountry from "./WhereToWatchCountry"
 import WhereToWatchIcon from "./WhereToWatchIcon"
 import WhereToWatchMethod from "./WhereToWatchMethod"
+import P from '../atoms/P'
 
 /**
  * Where to watch component
@@ -54,8 +55,8 @@ function WhereToWatch(props) {
                 { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod]?.map(item =>
                         <WhereToWatchIcon key={uid()} data={item}/>
                 )}
-                { props.watchData && !(country in props.watchData) && <p>Could not find any locations</p>}
-                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod] === undefined && <p>Could not find any locations</p>}
+                { props.watchData && !(country in props.watchData) && <P>Could not find any locations</P>}
+                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod] === undefined && <P>Could not find any locations</P>}
             </IconContainer>
         </>
     )

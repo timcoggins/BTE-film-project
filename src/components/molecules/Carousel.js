@@ -20,8 +20,7 @@ const ItemContainer = styled.div`
 
 const Item = styled.img`
     width: 100px;
-    background: gainsboro;
-    border: 1px black solid;
+    border: 1px ${props => props.theme.colors.BorderColor} solid;
 
     @media screen and (min-width:500px) {
         width: 150px;
@@ -44,7 +43,7 @@ const Carousel = (props) => {
             <H3>Suggested Movies</H3>
             {props.data && <ItemContainer>
                 {props.data.map(item =>
-                    <Link key={uid()} to={`/movie/${item.id}`}>
+                    <Link key={uid()} to={`/${item.media_type}/${item.id}`}>
                         <Item src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title}/>
                     </Link>
                     )}

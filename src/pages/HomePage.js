@@ -62,11 +62,12 @@ const HomePage = () => {
     // Get the data for trending movies of the day
     useEffect(() => {
         axios
-            .get(base_url + '/trending/movie/day?' + api_key)
+            .get(base_url + '/trending/all/day?' + api_key)
             .then(response => setPopularData(response.data.results))
             .catch(error => console.log(error))
     }, [])
 
+    console.log(popularData)
     // JSX
     return (
         <MainContainer>
