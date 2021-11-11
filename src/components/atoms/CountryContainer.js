@@ -6,12 +6,13 @@ import styled from "styled-components";
 
 const CountryContainer = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-
+    place-content: center;
+  margin: 20px 0;
+    /*justify-content: space-around;
+    
     @media screen and (min-width:600px) {
          justify-content: flex-start;
-    }
+    }*/
 `
 
 export default CountryContainer;

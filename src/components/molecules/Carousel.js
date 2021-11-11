@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { uid } from 'uid'
 import styled from 'styled-components'
 
+
 // Styles
 
 const Container = styled.div`
@@ -15,9 +16,8 @@ const Container = styled.div`
 `
 
 const Title = styled.h3`
-    //padding: 15px;
 
-@media screen and (min-width:500px) {
+    @media screen and (min-width:500px) {
         font-size: 20px;
     }
       @media screen and (min-width:800px) {
@@ -58,7 +58,7 @@ const Carousel = (props) => {
             <Title>Suggested Movies</Title>
             {props.data && <ItemContainer>
                 {props.data.map(item =>
-                    <Link key={uid()} to={`/film/${item.id}`}>
+                    <Link key={uid()} to={`/movie/${item.id}`}>
                         <Item src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title}/>
                     </Link>
                     )}

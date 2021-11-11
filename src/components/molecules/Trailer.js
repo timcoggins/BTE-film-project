@@ -13,7 +13,7 @@ import H3 from "../atoms/H3";
  * Trailer
  * @returns {JSX.Element}
  */
-const Trailer = () => {
+const Trailer = (props) => {
 
     // Get the movie ID from the URL params
     const { id } = useParams();
@@ -26,7 +26,7 @@ const Trailer = () => {
      */
     useEffect(() => {
         // URL for the API endpoint
-        const url = base_url + `/movie/${id}/videos?` + api_key;
+        const url = base_url + `/${props.media}/${id}/videos?` + api_key;
         // Fetch the trailer data
         axios
             .get(url)
@@ -43,7 +43,7 @@ const Trailer = () => {
     // JSX
 
     return (
-        <>
+        <div>
             <H3>Trailer</H3>
                 {trailerData && <TrailerIframe
                     src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
@@ -52,7 +52,7 @@ const Trailer = () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                 />}
-        </>
+        </div>
     );
 }
 

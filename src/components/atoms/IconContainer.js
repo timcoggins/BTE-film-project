@@ -12,7 +12,7 @@ const IconContainer = styled.div`
     padding: 20px;
     place-content: center;
 
-    @media screen and (min-width:600px) {
-        justify-content: flex-start;
+    /*@media screen and (min-width:600px) {
+        justify-content: flex-start;*/
 `
 export default IconContainer;

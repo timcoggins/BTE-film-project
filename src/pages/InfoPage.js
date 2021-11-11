@@ -18,12 +18,14 @@ import H1 from "../components/atoms/H2"
 import P from "../components/atoms/P"
 import InfoTitleBar from "../components/atoms/InfoTitleBar";
 import InfoImage from "../components/atoms/InfoImage"
+import Box from "../components/atoms/Box"
+
 
 /**
  * InfoPage
  * @returns {JSX.Element}
  */
-const InfoPage = () => {
+const InfoPage = (props) => {
 
     // Get the film ID from the router params
     const { id } = useParams();
@@ -42,19 +44,19 @@ const InfoPage = () => {
 
         // Get the general film data from the API when the page loads, use the id from the params
         axios
-            .get(base_url + `/movie/${id}?` + api_key)
+            .get(base_url + `/${props.media}/${id}?` + api_key)
             .then(response => setFilmData(response.data))
             .catch(error => console.log(error))
 
         // Get the where to watch data
         axios
-            .get(base_url + `/movie/${id}/watch/providers?` + api_key)
+            .get(base_url + `/${props.media}/${id}/watch/providers?` + api_key)
             .then(response => setWatchData(response.data.results))
             .catch(error => console.log(error))
 
         // Get the where to watch data
         axios
-            .get(base_url + `/movie/${id}/similar?` + api_key)
+            .get(base_url + `/${props.media}/${id}/similar?` + api_key)
             .then(response => setSimilarFilmData(response.data.results))
             .catch(error => console.log(error))
     }, [id])
@@ -65,16 +67,21 @@ const InfoPage = () => {
             {/* Only display the information once the data has arrived */}
             {filmData && <>
                 <InfoTitleBar>
-                    <H1>{filmData.title}</H1>
+                    <H1>{filmData.title || filmData.name}</H1>
                     <span>{filmData.vote_average < 10 ? filmData.vote_average.toFixed(1) : filmData.vote_average}</span>
                 </InfoTitleBar>
                 <P>Released: {formatDate(filmData.release_date)}</P>
                 <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
                 <P>{filmData.overview}</P>
+                <Box>
+                    <div>
+                        <WhereToWatch watchData={watchData} />
+                        <FilmInformation filmData={filmData}/>
+                    </div>
+                    <Trailer media={props.media}/>
+                </Box>
             </> }
-            <WhereToWatch watchData={watchData} />
-            <Trailer />
-            { filmData && <FilmInformation filmData={filmData}/>}
+
             <Carousel data={similarFilmData} />
         </MainContainer>
     )

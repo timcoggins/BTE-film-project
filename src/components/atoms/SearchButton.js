@@ -11,6 +11,7 @@ const SearchButton = styled.input`
     border: 1px solid black;
     border-radius: 4px;
     font-size: 15px;
+    transition: .5s ease;
 
     color: ${props => props.theme.colors.ButtonFontColor};
     background: ${props => props.theme.colors.ButtonBackground};

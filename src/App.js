@@ -24,11 +24,11 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/film/:id">
-            <InfoPage />
+          <Route path="/movie/:id">
+            <InfoPage media={'movie'}/>
           </Route>
-          <Route path="/tv/:id">
-            <InfoPage />
+          <Route path="/tv/:id" >
+            <InfoPage media={'tv'}/>
           </Route>
         </Switch>
         <Footer />

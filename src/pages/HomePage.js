@@ -80,8 +80,8 @@ const HomePage = () => {
 
             {/* Display each result on a card once we have the results data, if there is no data show the carousel */}
             <ResultCardContainer>
-                {!toggleTV && searchData.map(item => <SearchResultCard key={uid()} item={item} />)}
-                {toggleTV && tvData.map(item => <SearchResultCard key={uid()} item={item} />)}
+                {!toggleTV && searchData.map(item => <SearchResultCard key={uid()} item={item} media='movie'/>)}
+                {toggleTV && tvData.map(item => <SearchResultCard key={uid()} item={item} media='tv'/>)}
             </ResultCardContainer>
 
             {/* Display Carousel of popular movies */}

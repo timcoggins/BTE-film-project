@@ -7,7 +7,8 @@ import styled from "styled-components";
 const ResultCardTitleBar = styled.div`
     display: flex;
     place-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin: 15px;
   
     h3 {
         margin: 10px 0;

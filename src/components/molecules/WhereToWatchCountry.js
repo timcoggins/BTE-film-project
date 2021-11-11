@@ -32,13 +32,15 @@ const WhereToWatchCountry = (props) => {
     }
 
     // JSX
-    return (
+    return (<>
+
+        <H3>Where to watch</H3>
         <CountryContainer>
-            <H3>Where to watch</H3>
             <Select value={selectValue} onChange={selectHandler}>
                 {countryCodes.map(country => <option key={uid()} value={country.iso_3166_1}>{country.native_name}</option>)}
             </Select>
         </CountryContainer>
+        </>
     )
 }
 

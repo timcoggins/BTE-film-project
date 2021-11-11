@@ -11,6 +11,7 @@ const Button = styled.button`
     padding: 8px 25px;
     border-radius: 4px;
     font-size: 15px;
+    transition: .5s ease;
 
     color: ${props => props.theme.colors.ButtonFontColor};
     background: ${props => props.theme.colors.ButtonBackground};
