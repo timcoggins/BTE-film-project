@@ -29,13 +29,13 @@ const ResultCard = styled.div`
         color: ${props => props.theme.colors.Heading};
         opacity: 0;
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         background: ${props => props.theme.colors.CardBackground};
         width: 100%;
         transition: .5s ease;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
     }
     
     &:hover {
