@@ -21,6 +21,7 @@ const lightTheme = {
         FooterBackground: '#a7d2e8',
         RatingBackground: '#a7d2e8',
         CardOverlayBackground: '#d5d5d5',
+        MessageBoxBackground: '#fc415e',
 
         // Font Colours
         SiteTitle: '#000000',
@@ -69,6 +70,7 @@ const darkTheme = {
         FooterBackground: '#29617c',
         RatingBackground: '#29617c',
         CardOverlayBackground: '#1c1c1c',
+        MessageBoxBackground: '#fc415e',
 
         // Font Colours
         SiteTitle: '#FFFFFF',

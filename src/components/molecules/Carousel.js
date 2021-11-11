@@ -7,23 +7,9 @@
 import { Link } from 'react-router-dom'
 import { uid } from 'uid'
 import styled from 'styled-components'
-
+import H3 from '../atoms/H3'
 
 // Styles
-
-const Container = styled.div`
-
-`
-
-const Title = styled.h3`
-
-    @media screen and (min-width:500px) {
-        font-size: 20px;
-    }
-      @media screen and (min-width:800px) {
-        font-size: 22px;
-    }
-`;
 
 const ItemContainer = styled.div`
     display: flex;
@@ -54,8 +40,8 @@ const Item = styled.img`
 
 const Carousel = (props) => {
     return (
-        <Container>
-            <Title>Suggested Movies</Title>
+        <>
+            <H3>Suggested Movies</H3>
             {props.data && <ItemContainer>
                 {props.data.map(item =>
                     <Link key={uid()} to={`/movie/${item.id}`}>
@@ -63,7 +49,7 @@ const Carousel = (props) => {
                     </Link>
                     )}
             </ItemContainer>}
-        </Container>
+        </>
     )
 }
 

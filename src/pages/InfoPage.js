@@ -14,7 +14,7 @@ import FilmInformation from '../components/molecules/FilmInformation'
 import Carousel from '../components/molecules/Carousel'
 
 import MainContainer from "../components/atoms/MainContainer";
-import H1 from "../components/atoms/H2"
+import H1 from "../components/atoms/H1"
 import P from "../components/atoms/P"
 import InfoTitleBar from "../components/atoms/InfoTitleBar";
 import InfoImage from "../components/atoms/InfoImage"

@@ -22,7 +22,7 @@ const ResultCard = styled.div`
     p {
         font-size: 14px;
         padding: 15px;
-        color: black;
+        color: ${props => props.theme.colors.Paragraph};
     }
     
     section {

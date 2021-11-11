@@ -11,10 +11,12 @@ import HomeImage from "../components/molecules/HomeImage";
 import Search from "../components/molecules/Search"
 import SearchResultCard from "../components/molecules/SearchResultCard";
 import Carousel from "../components/molecules/Carousel"
+import MessageBox from "../components/molecules/MessageBox";
 import MainContainer from "../components/atoms/MainContainer";
 import ResultCardContainer from "../components/atoms/ResultCardContainer";
 import FilterContainer from "../components/atoms/FilterContainer";
 import Button from "../components/atoms/Button";
+import P from '../components/atoms/P';
 
 /**
  * Home page component
@@ -27,6 +29,7 @@ const HomePage = () => {
     const [tvData, setTvData] = useState([])
     const [popularData, setPopularData] = useState([])
     const [toggleTV, setToggleTV] = useState(false)
+    const [message, setMessage] = useState('')
 
     /**
      * Handler for when the user search for something
@@ -36,9 +39,10 @@ const HomePage = () => {
 
         // Check to see if the user search box is empty, exit the function if it is
         if(query === '') {
-            console.log('Search query was empty')   // TODO Make this into something more useful
+            setMessage('Search query was empty')   // TODO Make this into something more useful
             return;
         }
+        setMessage('');
 
         // Encode the search query to encodes the spaces, special characters etc
         const encoded = encodeURI(query);
@@ -52,6 +56,7 @@ const HomePage = () => {
             .get(base_url + '/search/tv?query=' + encoded + '&' + api_key)
             .then((response) => setTvData([...response.data.results]))
             .catch((error) => console.log(error));
+
     } 
 
     // Get the data for trending movies of the day
@@ -70,10 +75,11 @@ const HomePage = () => {
             {/* The search component for finding a movie */}
             <Search searchHandler={searchHandler} />
 
+            { message !== '' && <MessageBox msg={message} />}
             {/* TODO improve this */}
             {((searchData.length > 0) || (tvData.length > 0)) && <FilterContainer>
-                {!toggleTV && <p>Found {searchData.length} results:</p>}
-                {toggleTV && <p>Found {tvData.length} results:</p>}
+                {!toggleTV && <P>Found {searchData.length} results:</P>}
+                {toggleTV && <P>Found {tvData.length} results:</P>}
                 <Button onClick={() => setToggleTV(!toggleTV)}>{toggleTV ? 'Show Films' : 'Show TV Series'}</Button>
             </FilterContainer>}
 
