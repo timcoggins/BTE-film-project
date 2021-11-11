@@ -3,7 +3,6 @@
  * Component for the footer information
  */
 import FooterContainer from "../atoms/FooterContainer";
-import P from '../atoms/P'
 
 /**
  * Footer

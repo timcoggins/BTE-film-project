@@ -32,7 +32,7 @@ const Trailer = (props) => {
             .get(url)
             .then((response) => checkTrailer(response.data))
             .catch((error) => console.log(error));
-    }, [id])
+    }, [id, props.media])
 
     /**
      * Checks if the trailer exists and is on youtube

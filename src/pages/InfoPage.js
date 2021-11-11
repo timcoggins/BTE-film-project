@@ -58,7 +58,7 @@ const InfoPage = (props) => {
             .get(base_url + `/${props.media}/${id}/similar?` + api_key)
             .then(response => setSimilarFilmData(response.data.results))
             .catch(error => console.log(error))
-    }, [id])
+    }, [id, props.media])
 
     // JSX Rendering
     return(

@@ -2,7 +2,7 @@
  * SearchResultCard.js
  * Shows an individual movie after the user searches for a movie
  */
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import formatDate from "../../utils/formatDate";
 import ResultCard from "../atoms/ResultCard";
 import ResultCardTitleBar from "../atoms/ResultCardTitleBar"
