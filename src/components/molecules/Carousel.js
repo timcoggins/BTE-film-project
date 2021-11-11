@@ -7,17 +7,9 @@
 import { Link } from 'react-router-dom'
 import { uid } from 'uid'
 import styled from 'styled-components'
+import H3 from '../atoms/H3'
 
 // Styles
-
-const Container = styled.div`
-
-`
-
-const Title = styled.h3`
-  padding-left: 10px;
-  margin: 6px, 0px;
-`;
 
 const ItemContainer = styled.div`
     display: flex;
@@ -28,8 +20,14 @@ const ItemContainer = styled.div`
 
 const Item = styled.img`
     width: 100px;
-    background: gainsboro;
-    border: 1px black solid;
+    border: 1px ${props => props.theme.colors.BorderColor} solid;
+
+    @media screen and (min-width:500px) {
+        width: 150px;
+    }
+      @media screen and (min-width:800px) {
+        width: 190px;
+    }
 `
 
 /**
@@ -41,16 +39,16 @@ const Item = styled.img`
 
 const Carousel = (props) => {
     return (
-        <Container>
-            <Title>Suggested Movies</Title>
+        <>
+            <H3>Suggested Movies</H3>
             {props.data && <ItemContainer>
                 {props.data.map(item =>
-                    <Link key={uid()} to={`/film/${item.id}`}>
+                    <Link key={uid()} to={`/${item.media_type}/${item.id}`}>
                         <Item src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title}/>
                     </Link>
                     )}
             </ItemContainer>}
-        </Container>
+        </>
     )
 }
 

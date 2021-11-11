@@ -1,28 +1,17 @@
 /**
- * 
+ * WhereToWatch.js
  * Allows the user to see based on their country, where the particular show they are looking for can be found
- * 
+ *
  */
+import { useState, useEffect } from 'react'
+import { uid } from 'uid'
+import axios from "axios";
+import IconContainer from "../atoms/IconContainer";
 
 import WhereToWatchCountry from "./WhereToWatchCountry"
 import WhereToWatchIcon from "./WhereToWatchIcon"
 import WhereToWatchMethod from "./WhereToWatchMethod"
-
-import { useState, useEffect } from 'react'
-import { uid } from 'uid'
-import axios from "axios";
-import styled from 'styled-components'
-
-// Styles
-
-const IconContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 20px;
-  place-content: center;
-`
+import P from '../atoms/P'
 
 /**
  * Where to watch component
@@ -52,15 +41,11 @@ function WhereToWatch(props) {
     };
 
     // Get the users location when the component mounts
-    useEffect(() => {
-        getGeoInfo()
-    }, [])
-
+    useEffect(() => getGeoInfo(), [])
 
     // JSX
-
     return (
-        <div>
+        <>
             {/* Pass the states country and watchMethod as props to these components */}
             <WhereToWatchCountry country={country} setCountry={setCountry}/>
             <WhereToWatchMethod watchMethod={watchMethod} setWatchMethod={setWatchMethod}/>
@@ -70,10 +55,10 @@ function WhereToWatch(props) {
                 { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod]?.map(item =>
                         <WhereToWatchIcon key={uid()} data={item}/>
                 )}
-                { props.watchData && !(country in props.watchData) && <p>Could not find any locations</p>}
-                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod] === undefined && <p>Could not find any locations</p>}
+                { props.watchData && !(country in props.watchData) && <P>Could not find any locations</P>}
+                { props.watchData && (country in props.watchData) && props.watchData[country][watchMethod] === undefined && <P>Could not find any locations</P>}
             </IconContainer>
-        </div>
+        </>
     )
 }
 
