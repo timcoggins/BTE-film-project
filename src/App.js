@@ -22,7 +22,7 @@ import './App.css';
  */
 function App() {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   /*useEffect(() => localStorage.setItem('darkMode', darkMode.toString()), [darkMode])
   useEffect(() => {
     console.log(typeof(localStorage.getItem('darkMode')))

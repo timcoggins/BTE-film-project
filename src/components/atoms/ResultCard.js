@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 const ResultCard = styled.div`
     background: ${props => props.theme.colors.CardBackground};
-    margin: 10px;
+    margin: 10px 0;
+    
     border: 1px ${props => props.theme.colors.BorderColor} solid;
     border-radius: 4px;
     width: 300px;
@@ -17,6 +18,7 @@ const ResultCard = styled.div`
         width: 100%;
         height: 100%;
         border-radius: 4px;
+        
     }
 
     p {
@@ -36,6 +38,7 @@ const ResultCard = styled.div`
         transition: .5s ease;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
+      
     }
     
     &:hover {
@@ -45,8 +48,9 @@ const ResultCard = styled.div`
     }
     
     @media screen and (min-width:500px) {
-        width: 260px;
+        width: 200px;
     }
+
 `
 
 export default ResultCard;
