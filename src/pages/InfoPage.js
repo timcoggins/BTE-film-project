@@ -19,6 +19,7 @@ import P from "../components/atoms/P"
 import InfoTitleBar from "../components/atoms/InfoTitleBar";
 import InfoImage from "../components/atoms/InfoImage"
 import Box from "../components/atoms/Box"
+import Credits from "../components/molecules/Credits";
 
 /**
  * InfoPage
@@ -37,6 +38,9 @@ const InfoPage = (props) => {
 
     // State variable to store similar movies
     const [similarFilmData, setSimilarFilmData] = useState();
+
+    const [credits, setCredits] = useState();
+    
   
     // API Calls
     useEffect(()=> {
@@ -58,7 +62,14 @@ const InfoPage = (props) => {
             .get(base_url + `/${props.media}/${id}/similar?` + api_key)
             .then(response => setSimilarFilmData(response.data.results))
             .catch(error => console.log(error))
+        
+        axios
+            .get(base_url + `/${props.media}/${id}/credits?` + api_key)
+            .then(response => setCredits(response.data))
+            .catch(error => console.log(error))
     }, [id, props.media])
+
+    console.log(credits);
 
     // JSX Rendering
     return(
@@ -77,7 +88,8 @@ const InfoPage = (props) => {
                         <WhereToWatch watchData={watchData} />
                         <FilmInformation filmData={filmData}/>
                     </div>
-                    <Trailer media={props.media}/>
+                    <Trailer media={props.media} />
+                    <Credits credits={credits}/>
                 </Box>
             </> }
 
