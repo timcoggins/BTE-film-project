@@ -4,11 +4,12 @@ const Credits = (props) => {
     return (
       <>
         {props.credits &&
-          props.credits.cast.map((person) => (
+          props.credits.cast.slice(0, 5).map((person) => (
             <p>{person.name}</p>
           ))}
       </>
     );
 }
 export default Credits;
+
 
