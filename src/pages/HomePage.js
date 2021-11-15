@@ -30,6 +30,7 @@ const HomePage = () => {
     const [popularData, setPopularData] = useState([])
     const [toggleTV, setToggleTV] = useState(false)
     const [message, setMessage] = useState('')
+    const [hasSearched, setHasSearched] = useState(false)
 
     /**
      * Handler for when the user search for something
@@ -57,7 +58,14 @@ const HomePage = () => {
             .then((response) => setTvData([...response.data.results]))
             .catch((error) => console.log(error));
 
+        // Change the has searched flag to enable the useEffect below
+        setHasSearched(true);
     } 
+
+    // Check if the results are empty once the user has searched
+    useEffect(() => {
+        if(hasSearched && searchData.length === 0 && tvData.length === 0) setMessage('No results found')
+    }, [searchData, tvData, hasSearched])
 
     // Get the data for trending movies of the day
     useEffect(() => {
