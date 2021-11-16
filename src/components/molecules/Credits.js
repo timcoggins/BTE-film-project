@@ -1,20 +1,28 @@
-import H4 from "../atoms/H4";
+import P from "../atoms/P";
 import TD from "../atoms/TD";
+import Icon from "../atoms/Icon";
 
 const Credits = (props) => {
   console.log(props);
   return (
     <>
       <TD>
-        <H4>
-          Cast:
+        <P>
           {props.credits &&
-            props.credits.cast
-              .slice(0, 5)
-              .map((person) => <p>{person.name}</p>)}
-        </H4>
+            props.credits.cast.slice(0, 5).map((person) => (
+              <>
+                <Icon width='50px'
+                  src={`http://image.tmdb.org/t/p/w500${person.profile_path}`}
+                  alt={person.name}
+                />
+                <p>{person.name}</p>
+              </>
+            ))}
+        </P>
       </TD>
     </>
   );
 };
 export default Credits;
+
+

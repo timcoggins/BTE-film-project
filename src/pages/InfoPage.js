@@ -72,29 +72,40 @@ const InfoPage = (props) => {
     console.log(credits);
 
     // JSX Rendering
-    return(
-        <MainContainer>
-            {/* Only display the information once the data has arrived */}
-            {filmData && <>
-                <InfoTitleBar>
-                    <H1>{filmData.title || filmData.name}</H1>
-                    <span>{filmData.vote_average < 10 ? filmData.vote_average.toFixed(1) : filmData.vote_average}</span>
-                </InfoTitleBar>
-                <P>Released: {formatDate(filmData.release_date)}</P>
-                <InfoImage src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`} alt={filmData.title}/>
-                <P>{filmData.overview}</P>
-                <Box>
-                    <div>
-                        <WhereToWatch watchData={watchData} />
-                        <FilmInformation filmData={filmData}/>
-                    </div>
-                    <Trailer media={props.media} />
-                    <Credits credits={credits}/>
-                </Box>
-            </> }
+    return (
+      <MainContainer>
+        {/* Only display the information once the data has arrived */}
+        {filmData && (
+          <>
+            <InfoTitleBar>
+              <H1>{filmData.title || filmData.name}</H1>
+              <span>
+                {filmData.vote_average < 10
+                  ? filmData.vote_average.toFixed(1)
+                  : filmData.vote_average}
+              </span>
+            </InfoTitleBar>
+            <P>Released: {formatDate(filmData.release_date)}</P>
+            <InfoImage
+              src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`}
+              alt={filmData.title}
+            />
+            <P>{filmData.overview}</P>
+            <Box>
+              <div>
+                <WhereToWatch watchData={watchData} />
+                <FilmInformation filmData={filmData} />
+              </div>
+              <div>
+                <Trailer media={props.media} />
+                <Credits credits={credits} />
+              </div>
+            </Box>
+          </>
+        )}
 
-            <Carousel data={similarFilmData} media={props.media}/>
-        </MainContainer>
-    )
+        <Carousel data={similarFilmData} media={props.media} />
+      </MainContainer>
+    );
 }
 export default InfoPage

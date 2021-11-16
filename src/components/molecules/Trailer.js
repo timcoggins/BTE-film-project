@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import TrailerIframe from "../atoms/TrailerIframe";
 import H3 from "../atoms/H3";
+import Credits from "./Credits";
+import H4 from "../atoms/H4";
 
 /**
  * Trailer
@@ -43,16 +45,22 @@ const Trailer = (props) => {
     // JSX
 
     return (
-        <div>
-            <H3>Trailer</H3>
-                {trailerData && <TrailerIframe
-                    src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                />}
-        </div>
+      <div>
+        <H3>Trailer</H3>
+        {trailerData && (
+          <TrailerIframe
+            src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        )}
+        <H4>
+          Cast:
+          <Credits />
+        </H4>
+      </div>
     );
 }
 
