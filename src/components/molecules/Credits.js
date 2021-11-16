@@ -1,13 +1,13 @@
 import P from "../atoms/P";
 import TD from "../atoms/TD";
 import Icon from "../atoms/Icon";
+import CastImageContainer from "../atoms/CastImageContainer";
 
 const Credits = (props) => {
   console.log(props);
   return (
     <>
-      <TD>
-        <P>
+      <CastImageContainer>
           {props.credits &&
             props.credits.cast.slice(0, 5).map((person) => (
               <>
@@ -18,8 +18,7 @@ const Credits = (props) => {
                 <p>{person.name}</p>
               </>
             ))}
-        </P>
-      </TD>
+        </CastImageContainer>
     </>
   );
 };
