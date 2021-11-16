@@ -4,7 +4,6 @@
  */
 
 import P from '../atoms/P'
-import H4 from "../atoms/H4";
 
 /**
  * Film information item component
@@ -14,7 +13,7 @@ import H4 from "../atoms/H4";
 const FilmInformationItem = (props) => {
     return (
         <tr>
-            <td><H4>{props.title}</H4></td>
+            <td><P><b>{props.title}</b></P></td>
             <td><P>{props.text}</P></td>
         </tr>
     )
