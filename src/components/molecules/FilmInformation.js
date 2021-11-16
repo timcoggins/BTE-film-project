@@ -16,6 +16,7 @@ import H3 from "../atoms/H3";
  * @returns {JSX.Element}
  */
 const FilmInformation = (props) => {
+
     return (<>
             <H3>Details</H3>
         <table>
@@ -24,6 +25,11 @@ const FilmInformation = (props) => {
             <FilmInformationItem title={"Rating:"} text={props.filmData['vote_average']} />
             <FilmInformationItem title={"Original language:"} text={props.filmData["original_language"]} />
             <FilmInformationItem title={"Runtime:"} text={`${props.filmData["runtime"]} minutes`} />
+ 
+            {/* Director: 
+        {props.credits && props.credits.crew.find((person) => person.job === "Director" )
+        .map((person) => <p>{person.name}</p>)} */}
+
             <tr>
                 <TD><H4>Genre Tags:</H4></TD>
                 <TD><BubbleContainer>

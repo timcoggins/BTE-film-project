@@ -86,7 +86,8 @@ const InfoPage = (props) => {
                 <Box>
                     <div>
                         <WhereToWatch watchData={watchData} />
-                        <FilmInformation filmData={filmData}/>
+                        <FilmInformation filmData={filmData}
+                        credits={credits}/>
                     </div>
                     <Trailer media={props.media} />
                     <Credits credits={credits}/>
