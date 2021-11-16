@@ -1,5 +1,4 @@
 import P from "../atoms/P";
-import TD from "../atoms/TD";
 import CastImageContainer from "../atoms/CastImageContainer";
 import H3 from "../atoms/H3";
 import CastImage from "../atoms/CastImage";

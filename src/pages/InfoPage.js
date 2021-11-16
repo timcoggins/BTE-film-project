@@ -93,14 +93,12 @@ const InfoPage = (props) => {
             />
             <P>{filmData.overview}</P>
             <Box>
-              <div>
-                <WhereToWatch watchData={watchData} />
                 <FilmInformation filmData={filmData} credits={credits} />
-              </div>
-              <div>
-                <Trailer media={props.media} />
-                <Credits credits={credits} />
-              </div>
+                <div>
+                    <WhereToWatch watchData={watchData} />
+                    <Trailer media={props.media} />
+                    <Credits credits={credits} />
+                </div>
             </Box>
           </>
         )}
