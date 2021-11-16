@@ -8,8 +8,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import TrailerIframe from "../atoms/TrailerIframe";
 import H3 from "../atoms/H3";
-import Credits from "./Credits";
-import H4 from "../atoms/H4";
 
 /**
  * Trailer
@@ -56,10 +54,6 @@ const Trailer = (props) => {
             allowfullscreen
           />
         )}
-        <H4>
-          Cast:
-          <Credits />
-        </H4>
       </div>
     );
 }

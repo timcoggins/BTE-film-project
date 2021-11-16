@@ -11,10 +11,6 @@ const CastImageContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 
-  p {
-    font-size: 14px;
-    color: ${(props) => props.theme.colors.Paragraph};
-  }
 `;
   
 
