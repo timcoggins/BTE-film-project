@@ -87,7 +87,7 @@ const InfoPage = (props) => {
             </InfoTitleBar>
             <P>Released: {formatDate(filmData.release_date)}</P>
             <InfoImage
-              src={`http://image.tmdb.org/t/p/w500${filmData.backdrop_path}`}
+              src={`http://image.tmdb.org/t/p/original${filmData.backdrop_path}`}
               alt={filmData.title}
             />
             <P>{filmData.overview}</P>
