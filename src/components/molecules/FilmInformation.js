@@ -2,6 +2,7 @@
  * FilmInformation.js
  * Calls the subcomponent FilmInformationItem for each thing like genre, rating, blah
  */
+import {useState, useEffect} from 'react'
 import { uid } from 'uid'
 import FilmInformationItem from './FilmInformationItem'
 import Bubble from "../atoms/Bubble";
@@ -17,19 +18,26 @@ import H3 from "../atoms/H3";
  */
 const FilmInformation = (props) => {
 
+    const [director, setDirector] = useState();
+
+    useEffect(() => {
+        if(props.credits) {
+            let crew = props.credits.crew.find((person) => person.job === "Director" )
+            setDirector(crew.name)
+        }
+    }, [props.credits])
+    
+
     return (<>
-            <H3>Details</H3>
+        <H3>Details</H3>
         <table>
             <FilmInformationItem title={"Original title:"} text={props.filmData['original_title']} />
             <FilmInformationItem title={"Release date:"} text={props.filmData['release_date']} />
             <FilmInformationItem title={"Rating:"} text={props.filmData['vote_average']} />
             <FilmInformationItem title={"Original language:"} text={props.filmData["original_language"]} />
             <FilmInformationItem title={"Runtime:"} text={`${props.filmData["runtime"]} minutes`} />
- 
-            {/* Director: 
-        {props.credits && props.credits.crew.find((person) => person.job === "Director" )
-        .map((person) => <p>{person.name}</p>)} */}
-
+            <FilmInformationItem title={'Director'} text={director} />
+        
             <tr>
                 <TD><H4>Genre Tags:</H4></TD>
                 <TD><BubbleContainer>
