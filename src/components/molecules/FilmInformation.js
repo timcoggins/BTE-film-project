@@ -2,6 +2,7 @@
  * FilmInformation.js
  * Calls the subcomponent FilmInformationItem for each thing like genre, rating, blah
  */
+import {useState, useEffect} from 'react'
 import { uid } from 'uid'
 import FilmInformationItem from './FilmInformationItem'
 import Bubble from "../atoms/Bubble";
@@ -16,8 +17,20 @@ import P from "../atoms/P"
  * @returns {JSX.Element}
  */
 const FilmInformation = (props) => {
+
+    const [director, setDirector] = useState();
+
+    useEffect(() => {
+        if(props.credits) {
+            let crew = props.credits.crew.find((person) => person.job === "Director" )
+            setDirector(crew.name)
+        }
+    }, [props.credits])
+    
+
     return (<>
         <H3>Details</H3>
+
         <table><tbody>
             <FilmInformationItem title={"Title:"} text={props.filmData['original_title']} />
             <FilmInformationItem title={"Tagline:"} text={props.filmData['tagline']} />
@@ -30,6 +43,7 @@ const FilmInformation = (props) => {
             <FilmInformationItem title={"Budget:"} text={`$${props.filmData['budget']}`} />
             <FilmInformationItem title={"Revenue:"} text={`$${props.filmData['revenue']}`} />
             <FilmInformationItem title={"Original Language:"} text={props.filmData["original_language"]} />
+            <FilmInformationItem title={'Director'} text={director} />
 
             <tr>
                 <TD><P><b>Genre Tags:</b></P></TD>

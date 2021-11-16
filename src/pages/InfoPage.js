@@ -72,6 +72,7 @@ const InfoPage = (props) => {
     console.log(credits);
 
     // JSX Rendering
+
     return (
       <MainContainer>
         {/* Only display the information once the data has arrived */}
@@ -94,7 +95,7 @@ const InfoPage = (props) => {
             <Box>
               <div>
                 <WhereToWatch watchData={watchData} />
-                <FilmInformation filmData={filmData} />
+                <FilmInformation filmData={filmData} credits={credits} />
               </div>
               <div>
                 <Trailer media={props.media} />
