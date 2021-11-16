@@ -43,18 +43,18 @@ const Trailer = (props) => {
     // JSX
 
     return (
-      <div>
-        <H3>Trailer</H3>
-        {trailerData && (
-          <TrailerIframe
-            src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
-        )}
-      </div>
+      <section>
+        {trailerData && (<>
+            <H3>Trailer</H3>
+            <TrailerIframe
+                src={`https://www.youtube.com/embed/${trailerData.results[0].key}`}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            />
+        </>)}
+      </section>
     );
 }
 

@@ -69,8 +69,6 @@ const InfoPage = (props) => {
             .catch(error => console.log(error))
     }, [id, props.media])
 
-    console.log(credits);
-
     // JSX Rendering
 
     return (
@@ -87,11 +85,11 @@ const InfoPage = (props) => {
               </span>
             </InfoTitleBar>
             <P>Released: {formatDate(filmData.release_date)}</P>
-            <InfoImage
+            {filmData.backdrop_path && <InfoImage
               src={`http://image.tmdb.org/t/p/original${filmData.backdrop_path}`}
               alt={filmData.title}
-            />
-            <P>{filmData.overview}</P>
+            />}
+            {filmData.overview && <P>{filmData.overview}</P>}
             <Box>
                 <FilmInformation filmData={filmData} credits={credits} />
                 <div>
