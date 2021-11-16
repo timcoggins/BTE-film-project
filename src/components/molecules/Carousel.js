@@ -4,13 +4,11 @@
  * 
  */
 
-import { Link } from 'react-router-dom'
 import { uid } from 'uid'
 import { useState, useEffect } from 'react'
 import H3 from '../atoms/H3'
 import ResultCardContainer from "../atoms/ResultCardContainer";
 import SearchResultCard from "./SearchResultCard";
-
 
 /**
  * Carousel component
@@ -40,12 +38,7 @@ const Carousel = (props) => {
             {props.media === undefined && <H3>Popular Content</H3>}
 
             {newData && <ResultCardContainer>
-                {newData.map(item =>
-                    <Link key={uid()} to={`/${item.media_type}/${item.id}`}>
-                        {/*<Item src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title}/>*/}
-                        <SearchResultCard key={uid()} item={item} media={item.media_type}/>
-                    </Link>
-                )}
+                {newData.map(item => <SearchResultCard key={uid()} item={item} media={item.media_type}/>)}
             </ResultCardContainer>}
         </>
     )
