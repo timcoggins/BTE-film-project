@@ -5,6 +5,8 @@
 import {useState, useEffect} from 'react'
 import { uid } from 'uid'
 import FilmInformationItem from './FilmInformationItem'
+import formatDate from "../../utils/formatDate";
+import convertLanguageCode from "../../utils/convertLanguageCode";
 import Bubble from "../atoms/Bubble";
 import BubbleContainer from "../atoms/BubbleContainer";
 import TD from '../atoms/TD'
@@ -33,18 +35,19 @@ const FilmInformation = (props) => {
 
         <table>
             <tbody>
-                <FilmInformationItem title={"Title:"} text={props.filmData['original_title']} />
-                <FilmInformationItem title={"Tagline:"} text={props.filmData['tagline']} />
-                <FilmInformationItem title={"Status:"} text={props.filmData['status']} />
-                <FilmInformationItem title={"Release Date:"} text={props.filmData['release_date']} />
-                <FilmInformationItem title={"Website:"} text={props.filmData['homepage']} />
-                <FilmInformationItem title={"Runtime:"} text={`${props.filmData["runtime"]} minutes`} />
-                <FilmInformationItem title={"Rating:"} text={`${props.filmData['vote_average']}/10`} />
-                <FilmInformationItem title={"Votes"} text={`${props.filmData['vote_count']}`} />
-                <FilmInformationItem title={"Budget:"} text={`$${props.filmData['budget']}`} />
-                <FilmInformationItem title={"Revenue:"} text={`$${props.filmData['revenue']}`} />
-                <FilmInformationItem title={"Original Language:"} text={props.filmData["original_language"]} />
-                <FilmInformationItem title={'Director'} text={director} />
+                {props.filmData['title'] && <FilmInformationItem title={"Title:"} text={props.filmData['title']} />}
+                {props.filmData['original_title'] && <FilmInformationItem title={"Original Title:"} text={props.filmData['original_title']} />}
+                {props.filmData['tagline'] && <FilmInformationItem title={"Tagline:"} text={props.filmData['tagline']} />}
+                {props.filmData['status'] && <FilmInformationItem title={"Status:"} text={props.filmData['status']} />}
+                {props.filmData['release_date'] && <FilmInformationItem title={"Release Date:"} text={formatDate(props.filmData['release_date'])} />}
+                {props.filmData['website'] && <FilmInformationItem title={"Website:"} text={props.filmData['homepage']} />}
+                {props.filmData['runtime'] && <FilmInformationItem title={"Runtime:"} text={`${props.filmData["runtime"]} minutes`} />}
+                {props.filmData['vote_average'] >= 0 && <FilmInformationItem title={"Rating:"} text={`${props.filmData['vote_average']}/10`} />}
+                {props.filmData['vote_count'] > 0 && <FilmInformationItem title={"Votes"} text={`${props.filmData['vote_count']}`} />}
+                {props.filmData['budget'] > 0 && <FilmInformationItem title={"Budget:"} text={`$${props.filmData['budget']}`} />}
+                {props.filmData['revenue'] > 0 && <FilmInformationItem title={"Revenue:"} text={`$${props.filmData['revenue']}`} />}
+                {props.filmData['original_language'] && <FilmInformationItem title={"Original Language:"} text={convertLanguageCode(props.filmData["original_language"])} />}
+                {director && <FilmInformationItem title={'Director'} text={director} />}
                 <tr>
                     <TD><P><b>Genre Tags:</b></P></TD>
                     <TD><BubbleContainer>
