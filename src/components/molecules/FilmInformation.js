@@ -43,11 +43,11 @@ const FilmInformation = (props) => {
                 {props.filmData['website'] && <FilmInformationItem title={"Website:"} text={props.filmData['homepage']} />}
                 {props.filmData['runtime'] && <FilmInformationItem title={"Runtime:"} text={`${props.filmData["runtime"]} minutes`} />}
                 {props.filmData['vote_average'] >= 0 && <FilmInformationItem title={"Rating:"} text={`${props.filmData['vote_average']}/10`} />}
-                {props.filmData['vote_count'] > 0 && <FilmInformationItem title={"Votes"} text={`${props.filmData['vote_count']}`} />}
+                {props.filmData['vote_count'] > 0 && <FilmInformationItem title={"Votes:"} text={`${props.filmData['vote_count']}`} />}
                 {props.filmData['budget'] > 0 && <FilmInformationItem title={"Budget:"} text={`$${props.filmData['budget']}`} />}
                 {props.filmData['revenue'] > 0 && <FilmInformationItem title={"Revenue:"} text={`$${props.filmData['revenue']}`} />}
                 {props.filmData['original_language'] && <FilmInformationItem title={"Original Language:"} text={convertLanguageCode(props.filmData["original_language"])} />}
-                {director && <FilmInformationItem title={'Director'} text={director} />}
+                {director && <FilmInformationItem title={'Director:'} text={director} />}
                 <tr>
                     <TD><P><b>Genre Tags:</b></P></TD>
                     <TD><BubbleContainer>
