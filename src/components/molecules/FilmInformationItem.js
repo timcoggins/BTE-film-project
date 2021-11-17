@@ -4,6 +4,7 @@
  */
 
 import P from '../atoms/P'
+import TD from '../atoms/TD'
 
 /**
  * Film information item component
@@ -13,8 +14,9 @@ import P from '../atoms/P'
 const FilmInformationItem = (props) => {
     return (
         <tr>
-            <td><P><b>{props.title}</b></P></td>
-            <td><P>{props.text}</P></td>
+            <TD><P><b>{props.title}</b></P></TD>
+            {props.link ? <TD><a href={props.text}><P>{props.text}</P></a></TD> : <TD><P>{props.text}</P></TD>}
+
         </tr>
     )
 }

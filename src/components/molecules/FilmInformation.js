@@ -28,7 +28,6 @@ const FilmInformation = (props) => {
             if(crew) setDirector(crew.name)
         }
     }, [props.credits])
-    
 
     return (<section>
         <H3>More Information</H3>
@@ -40,7 +39,7 @@ const FilmInformation = (props) => {
                 {props.filmData['tagline'] && <FilmInformationItem title={"Tagline:"} text={props.filmData['tagline']} />}
                 {props.filmData['status'] && <FilmInformationItem title={"Status:"} text={props.filmData['status']} />}
                 {props.filmData['release_date'] && <FilmInformationItem title={"Release Date:"} text={formatDate(props.filmData['release_date'])} />}
-                {props.filmData['website'] && <FilmInformationItem title={"Website:"} text={props.filmData['homepage']} />}
+                {props.filmData['homepage'] && <FilmInformationItem title={"Website:"} text={props.filmData['homepage']} link={true}/>}
                 {props.filmData['runtime'] && <FilmInformationItem title={"Runtime:"} text={`${props.filmData["runtime"]} minutes`} />}
                 {props.filmData['vote_average'] >= 0 && <FilmInformationItem title={"Rating:"} text={`${props.filmData['vote_average']}/10`} />}
                 {props.filmData['vote_count'] > 0 && <FilmInformationItem title={"Votes:"} text={`${props.filmData['vote_count']}`} />}
