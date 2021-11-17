@@ -12,8 +12,7 @@ const Container = styled.div`
 
 const Image = styled.img`
   border-radius: 12px;
-  width: 256px;
-  height: 256px;
+  width: 200px;
 `
 
 
@@ -21,7 +20,7 @@ const HomeImage = () => {
     const { darkMode } = useContext(ThemeContext);
     return (
         <Container>
-            {darkMode ? <Image src={'./tv-room-dark.png'}/> : <Image src={'./tv-room.png'}/> }
+            {darkMode ? <Image src={'./fat-batman-reversed-1.png'}/> : <Image src={'./fat-batman-reversed-3.png'}/> }
             {/* got this image here https://iconscout.com/illustration/tv-room-1970160 need to attribute*/}
             <P>Find where to stream Film and TV!</P>
         </Container>
