@@ -20,7 +20,7 @@ const HomeImage = () => {
     const { darkMode } = useContext(ThemeContext);
     return (
         <Container>
-            {darkMode ? <Image src={'./superhero-2.png'}/> : <Image src={'./superhero-2.png'}/> }
+            {darkMode ? <Image src={'./fat-batman-reversed-1.png'}/> : <Image src={'./fat-batman-reversed-3.png'}/> }
             {/* got this image here https://iconscout.com/illustration/tv-room-1970160 need to attribute*/}
             <P>Find where to stream Film and TV!</P>
         </Container>
