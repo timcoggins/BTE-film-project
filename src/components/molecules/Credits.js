@@ -17,6 +17,9 @@ const Credits = (props) => {
                 width="100%"
                 src={`http://image.tmdb.org/t/p/w500${person.profile_path}`}
                 alt={person.name}
+                onError={(e) =>
+                  (e.target.src = `http://via.placeholder.com/102x152/dddddd/?text=Cast Missing`)
+                }
               />
               <P>{person.name}</P>
             </CastMember>
