@@ -1,8 +1,9 @@
+
+
 import styled from "styled-components";
 import {useContext} from "react";
 import P from '../atoms/P'
 import ThemeContext from "../../contexts/ThemeContext";
-
 
 
 const Container = styled.div`
@@ -14,7 +15,6 @@ const Image = styled.img`
   border-radius: 12px;
   width: 200px;
 `
-
 
 const HomeImage = () => {
     const { darkMode } = useContext(ThemeContext);
