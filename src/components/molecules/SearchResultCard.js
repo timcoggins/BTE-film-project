@@ -23,7 +23,7 @@ const SearchResultCard = (props) => {
                 {props.item.poster_path && <img
                     src={`http://image.tmdb.org/t/p/w500${ props.item.poster_path }`}
                     alt={ props.item.title || props.item.name }
-                    onError={(e)=> e.target.src = `http://via.placeholder.com/260x370/dddddd/?text=Poster Missing`}
+                    onError={(e)=> e.target.src = `http://via.placeholder.com/260x370/dddddd/?text=${props.item.name}`}
                 />}
 
                 {/* If there is no poster use the placeholder automatically and prevent 404 errors*/}

@@ -12,13 +12,11 @@ import TD from '../atoms/TD'
  * @returns {JSX.Element}
  */
 const FilmInformationItem = (props) => {
-    return (
-        <tr>
+    return (<tr>
             <TD><P><b>{props.title}</b></P></TD>
+            {/* If there is a link prop, make the item into a link */}
             {props.link ? <TD><a href={props.text}><P>{props.text}</P></a></TD> : <TD><P>{props.text}</P></TD>}
-
-        </tr>
-    )
+        </tr>)
 }
 
 export default FilmInformationItem
