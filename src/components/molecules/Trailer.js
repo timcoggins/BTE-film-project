@@ -38,7 +38,12 @@ const Trailer = (props) => {
      * Checks if the trailer exists and is on youtube
      * @param data
      */
-    const checkTrailer = (data) => data.results[0].site === "YouTube" ? setTrailerData(data) : null;
+    const checkTrailer = (data) => {
+        // This syntax stops the error
+        if(data.results[0] !== undefined) {
+            if(data.results[0].site === "YouTube") setTrailerData(data)
+        }
+    }
 
     // JSX
 

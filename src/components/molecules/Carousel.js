@@ -1,7 +1,6 @@
 /**
- * 
- * Shows a carousel of other movies
- * 
+ * Carousel.js
+ * Displays a grid of movies
  */
 
 import { uid } from 'uid'
@@ -14,13 +13,13 @@ import SearchResultCard from "./SearchResultCard";
  * Carousel component
  * @param props
  * @returns {JSX.Element}
- * @constructor
  */
-
 const Carousel = (props) => {
 
+    // Decalre the state
     const [ newData, setNewData ] = useState([])
 
+    // We need to add the media_type to the data objects so we can link correctly
     useEffect(() => {
         if(!props.data) return;
             setNewData(props.data.map(item => {
@@ -30,7 +29,7 @@ const Carousel = (props) => {
             }))
     }, [props.data, props.media]);
 
-
+    // JSX
     return (
         <>
             {props.media === 'tv' && <H3>Similar TV Series</H3>}
